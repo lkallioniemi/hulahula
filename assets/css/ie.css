@@ -1,0 +1,4155 @@
+@charset "UTF-8";
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+/* line 23, ../scss/_mixins.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 25, ../scss/_mixins.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 26, ../scss/_mixins.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*********************
+TOOLS
+*********************/
+/* line 34, ../scss/_mixins.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 40, ../scss/_mixins.scss */
+.hidden {
+  display: none;
+}
+
+/* line 44, ../scss/_mixins.scss */
+.visible {
+  display: block;
+}
+
+/* line 49, ../scss/_mixins.scss */
+.image-replacement {
+  text-indent: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*********************
+MEDIA QUERIES
+*********************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/* Brand colors */
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+/* line 148, ../scss/_mixins.scss */
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+/* line 154, ../scss/_mixins.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 155, ../scss/_mixins.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 156, ../scss/_mixins.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 160, ../scss/_mixins.scss */
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+}
+
+/* line 166, ../scss/_mixins.scss */
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f;
+}
+
+/* line 172, ../scss/_mixins.scss */
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8;
+}
+
+/* line 178, ../scss/_mixins.scss */
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4;
+}
+
+/* line 184, ../scss/_mixins.scss */
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2;
+}
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BUTTONS
+*********************/
+/* line 246, ../scss/_mixins.scss */
+.button, .button:visited, input[type="submit"] {
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  border: 0;
+  padding: 6px 12px 4px 12px;
+  color: #51a5eb;
+  display: inline-block;
+  font-size: 1.125em;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 21px;
+  border-radius: 4px;
+  background-color: #e5f2fc;
+}
+/* line 263, ../scss/_mixins.scss */
+.button:hover, .button:focus, .button:visited:hover, .button:visited:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  color: #51a5eb;
+  background-color: #b7dbf7;
+}
+/* line 268, ../scss/_mixins.scss */
+.button:active, .button:visited:active, input[type="submit"]:active {
+  background-color: #b7dbf7;
+}
+/* line 272, ../scss/_mixins.scss */
+.button:before, .button:visited:before, input[type="submit"]:before {
+  content: '';
+}
+/* line 276, ../scss/_mixins.scss */
+.button:after, .button:visited:after, input[type="submit"]:after {
+  left: 4px;
+  position: relative;
+  top: 2px;
+}
+/* line 282, ../scss/_mixins.scss */
+.button.transparent, .button:visited.transparent, input[type="submit"].transparent {
+  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #FFF;
+}
+/* line 287, ../scss/_mixins.scss */
+.button.transparent:hover, .button:visited.transparent:hover, input[type="submit"].transparent:hover {
+  background-color: #999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 293, ../scss/_mixins.scss */
+.button.facebook, .button:visited.facebook, input[type="submit"].facebook {
+  padding: 10px 20px 10px 0;
+  background: none;
+  font-size: 0.9em;
+}
+/* line 298, ../scss/_mixins.scss */
+.button.facebook:hover, .button:visited.facebook:hover, input[type="submit"].facebook:hover {
+  background: none;
+  color: #ccc;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 304, ../scss/_mixins.scss */
+.button.facebook span, .button:visited.facebook span, input[type="submit"].facebook span {
+  display: block;
+  float: left;
+  position: relative;
+}
+/* line 310, ../scss/_mixins.scss */
+.button.facebook .text, .button:visited.facebook .text, input[type="submit"].facebook .text {
+  top: 2px;
+}
+/* line 313, ../scss/_mixins.scss */
+.button.facebook .ss-icon, .button:visited.facebook .ss-icon, input[type="submit"].facebook .ss-icon {
+  font-size: 1.3em;
+  margin-top: 1px;
+  margin-left: 2px;
+  top: 2px;
+  left: 9px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 293, ../scss/_mixins.scss */
+  .button.facebook, .button:visited.facebook, input[type="submit"].facebook {
+    font-size: 1em;
+  }
+  /* line 323, ../scss/_mixins.scss */
+  .button.facebook .ss-icon, .button:visited.facebook .ss-icon, input[type="submit"].facebook .ss-icon {
+    margin-top: 2px;
+    font-size: 1.4em;
+  }
+}
+
+/*
+.blue-button, .blue-button:visited {
+	border-color: darken($bones-blue, 10%);
+	text-shadow: 0 1px 1px darken($bones-blue, 10%);
+	@include css-gradient( $bones-blue, darken($bones-blue, 5%) );
+	box-shadow: inset 0 0 3px lighten($bones-blue, 16%);
+
+	&:hover, &:focus {
+		border-color: darken($bones-blue, 15%);
+		@include css-gradient( darken($bones-blue, 4%), darken($bones-blue, 10%) );
+	}
+	&:active {
+		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
+	}
+}
+*/
+/**
+ * Gridpak Beta SCSS 
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+/* Reusable column setup */
+/* line 21, ../scss/_gridpak.scss */
+.col {
+  border: 0px solid transparent;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+}
+
+/* 1. 12 Column Grid 0px - Infinity 
+----------------------------------------------------------------------------- 
+
+Span 1:    6.5%
+Span 2:    15.0%
+Span 3:    23.5%
+Span 4:    32.0%
+Span 5:    40.5%
+Span 6:    49.0%
+Span 7:    57.5%
+Span 8:    66.0%
+Span 9:    74.5%
+Span 10:    83.0%
+Span 11:    91.5%
+Span 12:    100%
+
+----------------------------------------------------------------------------- */
+/* line 58, ../scss/_gridpak.scss */
+.col {
+  margin-left: 2%;
+  padding: 0 0%;
+}
+
+/* --- Gridpak variables ---*/
+/* line 71, ../scss/_gridpak.scss */
+.row .col:first-child {
+  margin-left: 0;
+}
+
+/*
+Add your semantic classnames in alongside their corresponding spans here. e.g.
+
+.span-3,
+.my_semantic_class_name {
+    ...
+}
+
+*/
+/* line 85, ../scss/_gridpak.scss */
+.span-1 {
+  width: 6.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 88, ../scss/_gridpak.scss */
+.span-2 {
+  width: 15%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 91, ../scss/_gridpak.scss */
+.span-3 {
+  width: 23.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 94, ../scss/_gridpak.scss */
+.span-4 {
+  width: 32%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 97, ../scss/_gridpak.scss */
+.span-5 {
+  width: 40.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 100, ../scss/_gridpak.scss */
+.span-6 {
+  width: 49%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 103, ../scss/_gridpak.scss */
+.span-7 {
+  width: 57.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 106, ../scss/_gridpak.scss */
+.span-8 {
+  width: 66%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 109, ../scss/_gridpak.scss */
+.span-9 {
+  width: 74.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 112, ../scss/_gridpak.scss */
+.span-10 {
+  width: 83%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 115, ../scss/_gridpak.scss */
+.span-11 {
+  width: 91.5%;
+  border-left-width: 0;
+  padding: 0 0%;
+  margin-left: 2%;
+}
+
+/* line 118, ../scss/_gridpak.scss */
+.span-12 {
+  margin-left: 0;
+  width: 100%;
+}
+
+/******************************************************************
+Site Name: Danone.fi
+Author: Tuomas Arokanto
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/* line 18, ../scss/_base.scss */
+body {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* line 25, ../scss/_base.scss */
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea {
+  border: 1px solid #51a5eb;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/*********************
+GENERAL CLASSES
+*********************/
+/* line 35, ../scss/_base.scss */
+.hidden {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  /* line 35, ../scss/_base.scss */
+  .hidden {
+    display: block;
+  }
+}
+
+/* line 42, ../scss/_base.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* This is used in icons that appear inside a ball */
+/* line 47, ../scss/_base.scss */
+.ball:before, .ball.right:after {
+  color: #FFF;
+  background-color: #51a5eb;
+  border-radius: 0.9em;
+  width: 1.45em;
+  height: 1.6em;
+  display: inline-block;
+  padding: 0.3em 0.4em 0 0;
+  margin: 0 0.5em;
+}
+
+/* line 58, ../scss/_base.scss */
+.new-product {
+  position: absolute;
+  top: -1px;
+  left: -2px;
+}
+/* line 63, ../scss/_base.scss */
+.new-product.right {
+  left: auto;
+  right: -2px;
+  background: url(../images/new-product-ribbon-right-blank.png) no-repeat;
+  width: 118px;
+  height: 91px;
+  font-family: "Geogrotesque-Bold",Arial,serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* line 73, ../scss/_base.scss */
+.new-product.right > .ribbon-text {
+  display: block;
+  transform: rotate(37deg) translateX(27px) translateY(11px);
+  text-align: center;
+}
+
+/* line 81, ../scss/_base.scss */
+.alignright {
+  display: block;
+  margin: 0 auto;
+  float: none;
+}
+@media only screen and (min-width: 500px) {
+  /* line 81, ../scss/_base.scss */
+  .alignright {
+    float: right;
+    margin-left: 20px;
+  }
+}
+
+/* line 93, ../scss/_base.scss */
+.success-message,
+.gform_confirmation_message {
+  text-align: center;
+  font-size: 1.25em;
+}
+
+/* line 99, ../scss/_base.scss */
+.error-message {
+  color: #f00;
+}
+
+/* Brand navi */
+/* line 106, ../scss/_base.scss */
+.brand-navi a.logo-link {
+  /* NEW */
+  /* OLD */
+  /*@include mq(940px) {
+      float: left;
+      //width: 12.5%; for 8 brands
+      width: 11.1%;
+      height: auto;
+  }*/
+  display: block;
+  text-align: center;
+  padding: 80px 10px 0 10px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 0.938em;
+  line-height: 1em;
+  color: #000;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 60px;
+  -moz-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media only screen and (min-width: 768px) {
+  /* line 106, ../scss/_base.scss */
+  .brand-navi a.logo-link {
+    height: 100px;
+    float: left;
+    width: 25%;
+  }
+}
+@media only screen and (min-width: 940px) {
+  /* line 106, ../scss/_base.scss */
+  .brand-navi a.logo-link {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  /* line 106, ../scss/_base.scss */
+  .brand-navi a.logo-link {
+    background-size: auto 70px;
+  }
+}
+/* line 145, ../scss/_base.scss */
+.brand-navi a.logo-link:hover {
+  opacity: 0.5;
+}
+
+/* line 150, ../scss/_base.scss */
+.logo-link.activia {
+  background-image: url(../images/logo-activia.png);
+}
+
+/* line 151, ../scss/_base.scss */
+.logo-link.actimel {
+  background-image: url(../images/logo-actimel.png);
+}
+
+/* line 152, ../scss/_base.scss */
+.logo-link.danonino {
+  background-image: url(../images/logo-danonino.png);
+}
+
+/* line 153, ../scss/_base.scss */
+.logo-link.vitalinea {
+  background-image: url(../images/logo-vitalinea.png);
+}
+
+/* line 154, ../scss/_base.scss */
+.logo-link.danio {
+  background-image: url(../images/logo-danio.png);
+}
+
+/* line 155, ../scss/_base.scss */
+.logo-link.danette {
+  background-image: url(../images/logo-danette.png);
+}
+
+/* line 156, ../scss/_base.scss */
+.logo-link.proviva {
+  background-image: url(../images/logo-proviva.png);
+}
+
+/* line 157, ../scss/_base.scss */
+.logo-link.danone {
+  background-image: url(../images/logo-danone.png);
+}
+
+/* line 158, ../scss/_base.scss */
+.logo-link.disney {
+  background-image: url(../images/logo-disney.png);
+}
+
+/* line 159, ../scss/_base.scss */
+.logo-link.danup {
+  background-image: url(../images/logo-danup.png);
+}
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+/* home page */
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* line 175, ../scss/_base.scss */
+.search-results h3.search-title {
+  margin: 30px 0 0;
+}
+/* line 178, ../scss/_base.scss */
+.search-results p {
+  margin-top: 0;
+}
+
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/* line 214, ../scss/_base.scss */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  /* line 214, ../scss/_base.scss */
+  .wrap {
+    width: 96%;
+  }
+}
+/* line 221, ../scss/_base.scss */
+.wrap img {
+  max-width: 100%;
+}
+
+/* line 226, ../scss/_base.scss */
+.row {
+  padding: 0 4%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 226, ../scss/_base.scss */
+  .row {
+    padding: 0;
+  }
+}
+
+/*********************
+LINK STYLES
+*********************/
+/* line 237, ../scss/_base.scss */
+a, a:visited {
+  color: #00408d;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
+}
+/* line 241, ../scss/_base.scss */
+a:hover, a:focus, a:visited:hover, a:visited:focus {
+  color: #002b5f;
+}
+/* line 251, ../scss/_base.scss */
+a:link, a:visited:link {
+  /*
+  this highlights links on iPhones/iPads.
+  so it basically works like the :hover selector
+  for mobile devices.
+  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+/* line 265, ../scss/_base.scss */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  text-rendering: optimizelegibility;
+  font-weight: 500;
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+  /* removing text decoration from all headline links */
+}
+/* line 275, ../scss/_base.scss */
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  text-decoration: none;
+}
+
+/* line 280, ../scss/_base.scss */
+h1, .h1 {
+  font-size: 2.5em;
+  line-height: 1.333em;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+}
+
+/* line 287, ../scss/_base.scss */
+h2, .h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+}
+
+/* line 295, ../scss/_base.scss */
+h3, .h3 {
+  font-size: 1.125em;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+}
+
+/* line 301, ../scss/_base.scss */
+h4, .h4 {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* line 306, ../scss/_base.scss */
+h5, .h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+/* line 318, ../scss/_base.scss */
+.searchbar {
+  background-color: #51a5eb;
+  position: relative;
+  z-index: 200;
+  display: none;
+}
+/* line 324, ../scss/_base.scss */
+.searchbar #searchform {
+  position: relative;
+}
+/* line 327, ../scss/_base.scss */
+.searchbar #searchform input {
+  float: right;
+  background-color: #51a5eb;
+  border: 0;
+  color: #FFF;
+  text-align: right;
+  padding: 10px 30px 10px 0;
+  outline: none;
+}
+/* line 335, ../scss/_base.scss */
+.searchbar #searchform input::-webkit-input-placeholder {
+  color: #ddd;
+}
+/* line 339, ../scss/_base.scss */
+.searchbar #searchform span.ss-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 26px;
+  color: #51a5eb;
+  font-size: 2em;
+}
+
+/* line 350, ../scss/_base.scss */
+.header {
+  background-color: #FFF;
+  position: relative;
+  z-index: 150;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+}
+/* line 358, ../scss/_base.scss */
+.header #inner-header {
+  min-height: 102px;
+}
+/* line 363, ../scss/_base.scss */
+.header .search {
+  display: none;
+  float: right;
+  margin-bottom: 20px;
+}
+/* line 372, ../scss/_base.scss */
+.header .search form#searchform input[type="text"] {
+  width: 150px;
+  display: block;
+  float: left;
+}
+/* line 378, ../scss/_base.scss */
+.header .search form#searchform input[type="submit"] {
+  margin-top: -3px;
+  margin-left: 10px;
+  display: block;
+  float: left;
+  margin-bottom: 0;
+}
+/* line 388, ../scss/_base.scss */
+.header .subnavi-indicator {
+  display: none;
+  color: #51a5eb;
+  position: absolute;
+  bottom: -15px;
+  left: 300px;
+}
+/* line 394, ../scss/_base.scss */
+.header .subnavi-indicator.ball:before {
+  background-color: #FFF;
+  color: #51a5eb;
+  padding: 0.2em 0 0 0.4em;
+}
+
+/* line 402, ../scss/_base.scss */
+#logo {
+  font-size: 1em;
+  line-height: 0;
+  margin: 18px 0;
+  padding-left: 10px;
+  float: left;
+}
+/* line 410, ../scss/_base.scss */
+#logo a {
+  background: transparent url(../images/logo.png) no-repeat top left;
+  height: 64px;
+  width: 132px;
+  display: block;
+}
+
+/* line 418, ../scss/_base.scss */
+#navi-trigger {
+  display: block;
+  float: right;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+  margin: 34px 10px 0 0;
+}
+@media only screen and (min-width: 768px) {
+  /* line 418, ../scss/_base.scss */
+  #navi-trigger {
+    display: none;
+  }
+}
+/* line 431, ../scss/_base.scss */
+#navi-trigger:after {
+  padding-left: 5px;
+  top: 2px;
+  position: relative;
+}
+
+/* line 439, ../scss/_base.scss */
+.top.brand-navi {
+  display: none;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+/* line 457, ../scss/_base.scss */
+.nav {
+  clear: both;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 461, ../scss/_base.scss */
+.nav li {
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  font-weight: normal;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  text-align: right;
+  /*
+  so you really have to rethink your dropdowns for mobile.
+  you don't want to have it expand too much because the
+  screen is so small. How you manage your menu should
+  depend on the project. Here's some great info on it:
+  http://www.alistapart.com/articles/organizing-mobile/
+  */
+}
+@media only screen and (min-width: 768px) {
+  /* line 461, ../scss/_base.scss */
+  .nav li {
+    float: left;
+  }
+}
+/* line 474, ../scss/_base.scss */
+.nav li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px;
+  /*
+  remember this is for mobile ONLY, so there's no need
+  to even declare hover styles here, you can do it in
+  the style.scss file where it's relevant. We want to
+  keep this file as small as possible!
+  */
+}
+/* line 486, ../scss/_base.scss */
+.nav li a:hover, .nav li a:focus {
+  color: #51a5eb;
+}
+@media only screen and (min-width: 768px) {
+  /* line 504, ../scss/_base.scss */
+  .nav li ul.sub-menu,
+  .nav li ul.children {
+    display: none;
+  }
+}
+/* line 514, ../scss/_base.scss */
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 30px;
+}
+/* line 526, ../scss/_base.scss */
+.nav li ul.sub-menu li li a,
+.nav li ul.children li li a {
+  padding-left: 60px;
+}
+/* line 530, ../scss/_base.scss */
+.nav li ul.sub-menu li li li a,
+.nav li ul.children li li li a {
+  padding-left: 90px;
+}
+/* line 551, ../scss/_base.scss */
+.nav li.current-menu-item > a,
+.nav li.current_page_item > a,
+.nav li.current-page-ancestor > a {
+  color: #51a5eb;
+}
+/* line 552, ../scss/_base.scss */
+.nav li.current-menu-item > a.expandable,
+.nav li.current_page_item > a.expandable,
+.nav li.current-page-ancestor > a.expandable {
+  color: #51a5eb;
+}
+
+/* end .nav */
+/* line 559, ../scss/_base.scss */
+#main-navigation-container {
+  display: none;
+}
+
+/* line 560, ../scss/_base.scss */
+#mobile-navigation-container {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 563, ../scss/_base.scss */
+  #main-navigation-container {
+    display: block;
+  }
+
+  /* line 564, ../scss/_base.scss */
+  #mobile-navigation-container {
+    display: none;
+  }
+}
+/* line 569, ../scss/_base.scss */
+#menu-paanavigaatio,
+#menu-main-menu {
+  float: right;
+  margin: 26px 0 0 20px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 574, ../scss/_base.scss */
+  #menu-paanavigaatio li,
+  #menu-main-menu li {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 950px) {
+  /* line 574, ../scss/_base.scss */
+  #menu-paanavigaatio li,
+  #menu-main-menu li {
+    font-size: 1.15em;
+    margin-left: 55px;
+  }
+}
+/* line 584, ../scss/_base.scss */
+#menu-paanavigaatio li:first-child,
+#menu-main-menu li:first-child {
+  margin-left: 0;
+}
+/* line 589, ../scss/_base.scss */
+#menu-paanavigaatio .search-link,
+#menu-main-menu .search-link {
+  margin-top: -6px;
+  position: relative;
+}
+/* line 599, ../scss/_base.scss */
+#menu-paanavigaatio #navi-product-opener,
+#menu-main-menu #navi-product-opener {
+  margin-top: -6px;
+}
+/* line 601, ../scss/_base.scss */
+#menu-paanavigaatio #navi-product-opener:before,
+#menu-main-menu #navi-product-opener:before {
+  content: '';
+  display: none;
+}
+
+/* line 609, ../scss/_base.scss */
+#menu-mobiilinavigaatio li {
+  font-size: 1.2em;
+  text-align: left;
+}
+/* line 613, ../scss/_base.scss */
+#menu-mobiilinavigaatio li li {
+  font-size: 0.9em;
+}
+/* line 616, ../scss/_base.scss */
+#menu-mobiilinavigaatio li a {
+  display: inline-block;
+}
+/* line 619, ../scss/_base.scss */
+#menu-mobiilinavigaatio li a.expandable {
+  float: right;
+  clear: right;
+  font-size: 1em;
+  padding-top: 1px;
+}
+/* line 624, ../scss/_base.scss */
+#menu-mobiilinavigaatio li a.expandable:after {
+  content: '';
+  display: none;
+}
+/* line 631, ../scss/_base.scss */
+#menu-mobiilinavigaatio ul.sub-menu {
+  display: none;
+  margin: 0;
+}
+
+/* line 637, ../scss/_base.scss */
+.product .navi nav, .content .navi nav, .brand-frontpage .navi nav {
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+  /* Prevent the navi to be blocked by a floating image */
+}
+
+/* line 643, ../scss/_base.scss */
+.back-to-brandpage {
+  float: left;
+  top: 115px;
+  position: relative;
+}
+
+/* line 649, ../scss/_base.scss */
+#menu-brand-subnavi, .menu-brand-subnavi {
+  display: inline-block;
+  width: auto;
+  margin-top: 30px;
+}
+/* line 655, ../scss/_base.scss */
+#menu-brand-subnavi li, .menu-brand-subnavi li {
+  border-radius: 4px;
+  padding: 2px 18px;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  /* line 655, ../scss/_base.scss */
+  #menu-brand-subnavi li, .menu-brand-subnavi li {
+    margin-left: 20px;
+  }
+}
+/* line 665, ../scss/_base.scss */
+#menu-brand-subnavi li:first-child, .menu-brand-subnavi li:first-child {
+  margin-left: 0;
+}
+/* line 669, ../scss/_base.scss */
+#menu-brand-subnavi li a, .menu-brand-subnavi li a {
+  color: #FFF;
+  padding: 0;
+}
+/* line 672, ../scss/_base.scss */
+#menu-brand-subnavi li a:hover, .menu-brand-subnavi li a:hover {
+  color: #ccc;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 678, ../scss/_base.scss */
+#menu-brand-subnavi li.current-page, #menu-brand-subnavi li.current_page_item, .menu-brand-subnavi li.current-page, .menu-brand-subnavi li.current_page_item {
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 684, ../scss/_base.scss */
+#menu-brand-subnavi li .facebook, .menu-brand-subnavi li .facebook {
+  color: #FFF;
+}
+/* line 688, ../scss/_base.scss */
+#menu-brand-subnavi li .facebook span, .menu-brand-subnavi li .facebook span {
+  display: block;
+  float: left;
+}
+/* line 693, ../scss/_base.scss */
+#menu-brand-subnavi li .facebook .text, .menu-brand-subnavi li .facebook .text {
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  padding-top: 1px;
+}
+/* line 699, ../scss/_base.scss */
+#menu-brand-subnavi li .facebook .ss-icon, .menu-brand-subnavi li .facebook .ss-icon {
+  font-size: 1.8em;
+  position: relative;
+  top: -7px;
+  margin-left: 10px;
+}
+
+/* line 712, ../scss/_base.scss */
+.menu-brand-subnavi.content-subnavi li a {
+  color: #FFF;
+}
+/* line 714, ../scss/_base.scss */
+.menu-brand-subnavi.content-subnavi li a:hover, .menu-brand-subnavi.content-subnavi li a:active {
+  color: #ccc;
+}
+/* line 719, ../scss/_base.scss */
+.menu-brand-subnavi.content-subnavi li.current-menu-item, .menu-brand-subnavi.content-subnavi li.current_page_item {
+  background-color: #00408d;
+}
+/* line 722, ../scss/_base.scss */
+.menu-brand-subnavi.content-subnavi li.current-menu-item a, .menu-brand-subnavi.content-subnavi li.current_page_item a {
+  color: #FFF;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 729, ../scss/_base.scss */
+  #menu-alanavigaatio {
+    text-align: center;
+  }
+}
+/* line 736, ../scss/_base.scss */
+#menu-alanavigaatio li {
+  font-size: 1.1em;
+  text-align: left;
+  /* end current highlighters */
+}
+@media only screen and (min-width: 768px) {
+  /* line 736, ../scss/_base.scss */
+  #menu-alanavigaatio li {
+    display: inline-block;
+    float: none;
+  }
+  /* line 741, ../scss/_base.scss */
+  #menu-alanavigaatio li a {
+    padding: 10px 25px;
+  }
+}
+/* line 749, ../scss/_base.scss */
+#menu-alanavigaatio li a {
+  color: #FFF;
+}
+/* line 753, ../scss/_base.scss */
+#menu-alanavigaatio li ul.sub-menu {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  /* line 753, ../scss/_base.scss */
+  #menu-alanavigaatio li ul.sub-menu {
+    display: none;
+  }
+}
+/* line 759, ../scss/_base.scss */
+#menu-alanavigaatio li ul.sub-menu ul.sub-menu {
+  display: none;
+}
+/* line 764, ../scss/_base.scss */
+#menu-alanavigaatio li li {
+  font-size: 0.9em;
+}
+/* line 767, ../scss/_base.scss */
+#menu-alanavigaatio li li li {
+  font-size: 0.8em;
+}
+/* line 776, ../scss/_base.scss */
+#menu-alanavigaatio li.current-menu-item > a, #menu-alanavigaatio li.current_page_item > a, #menu-alanavigaatio li.current-page-ancestor > a {
+  color: #e091e3;
+}
+/* line 777, ../scss/_base.scss */
+#menu-alanavigaatio li.current-menu-item > a.expandable, #menu-alanavigaatio li.current_page_item > a.expandable, #menu-alanavigaatio li.current-page-ancestor > a.expandable {
+  color: #e091e3;
+}
+
+/* line 785, ../scss/_base.scss */
+.content-subsubnavi {
+  margin-bottom: 2.5em;
+}
+/* line 788, ../scss/_base.scss */
+.content-subsubnavi ul {
+  clear: none;
+  margin: 0;
+}
+/* line 792, ../scss/_base.scss */
+.content-subsubnavi ul li {
+  float: none;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  /* line 792, ../scss/_base.scss */
+  .content-subsubnavi ul li {
+    text-align: left;
+  }
+}
+/* line 800, ../scss/_base.scss */
+.content-subsubnavi ul li a {
+  padding: 0;
+}
+
+/*********************
+COMMON PAGE STYLES
+*********************/
+/* line 824, ../scss/_base.scss */
+.full-width-container {
+  position: relative;
+}
+/* line 827, ../scss/_base.scss */
+.full-width-container .row {
+  position: relative;
+}
+
+/* line 833, ../scss/_base.scss */
+.z-importance-medium {
+  z-index: 200;
+}
+
+/* line 837, ../scss/_base.scss */
+.full-width-container.content {
+  background: #0e5999 url(../images/brandpage-danio-bg-repeat.png) repeat-y top center;
+}
+/* line 840, ../scss/_base.scss */
+.full-width-container.content .col.normal-content {
+  min-height: 730px;
+}
+/* line 844, ../scss/_base.scss */
+.full-width-container.content .col.normal-content h1 {
+  text-align: center;
+}
+/* line 849, ../scss/_base.scss */
+.full-width-container.content .col.normal-content .text-content img {
+  margin-bottom: 20px;
+}
+/* line 853, ../scss/_base.scss */
+.full-width-container.content .col.normal-content .text-content p {
+  margin-bottom: 25px;
+}
+/* line 859, ../scss/_base.scss */
+.full-width-container.content .col.normal-content .brands a {
+  display: block;
+  text-align: center;
+  padding: 80px 10px 0 10px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 0.938em;
+  line-height: 1em;
+  color: #000;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 60px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 859, ../scss/_base.scss */
+  .full-width-container.content .col.normal-content .brands a {
+    width: 20%;
+    float: left;
+    height: 100px;
+  }
+}
+
+/*********************
+FRONT PAGE STYLES
+*********************/
+/* General */
+/* line 892, ../scss/_base.scss */
+.lisaa-uutuuksia {
+  display: none;
+}
+@media only screen and (min-width: 1238px) {
+  /* line 892, ../scss/_base.scss */
+  .lisaa-uutuuksia {
+    display: block;
+    position: absolute;
+    width: 211px;
+    height: 35px;
+    top: -35px;
+    left: -60px;
+    background-repeat: none;
+    background-color: transparent;
+    background-position: left top;
+    text-indent: -100%;
+    overflow: hidden;
+    background-image: url(../images/lisaa_uutuuksia_left.png);
+  }
+  /* line 911, ../scss/_base.scss */
+  .lisaa-uutuuksia.right {
+    background-image: url(../images/lisaa_uutuuksia_right.png);
+    left: auto;
+    right: -60px;
+  }
+}
+
+/* line 919, ../scss/_base.scss */
+.lisaa-uutuuksia-modern {
+  display: none;
+}
+@media only screen and (min-width: 1238px) {
+  /* line 919, ../scss/_base.scss */
+  .lisaa-uutuuksia-modern {
+    display: block;
+    position: absolute;
+    line-height: 28px;
+    height: 28px;
+    top: -28px;
+    left: -60px;
+    margin-left: 35px;
+    padding: 6px 0.5em 0;
+    background-repeat: repeat-x;
+    background-color: transparent;
+    background-position: left bottom;
+    background-image: url(../images/lisaa_uutuuksia_bg.png);
+    text-transform: uppercase;
+    font-family: "Geogrotesque-Bold",Arial,serif;
+    font-size: 1.2em;
+    border-top-right-radius: 5px;
+  }
+  /* line 940, ../scss/_base.scss */
+  .lisaa-uutuuksia-modern:before, .lisaa-uutuuksia-modern.right:after {
+    content: '⬊';
+    font-family: "SSStandard";
+    display: block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: -35px;
+    bottom: -10px;
+    background: url(../images/lisaa_uutuuksia_arrow_bg.png) repeat-x left top;
+  }
+  /* line 956, ../scss/_base.scss */
+  .lisaa-uutuuksia-modern.right {
+    color: #00408d;
+    left: auto;
+    right: -25px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 5px;
+    background: #fff;
+  }
+  /* line 964, ../scss/_base.scss */
+  .lisaa-uutuuksia-modern.right:before {
+    display: none;
+  }
+  /* line 968, ../scss/_base.scss */
+  .lisaa-uutuuksia-modern.right:after {
+    content: '⬋';
+    left: auto;
+    right: -35px;
+    background-image: none;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+/* CAROUSEL */
+/* line 983, ../scss/_base.scss */
+.fp-carousel-navi {
+  margin: 0 auto;
+  max-width: 1100px;
+  position: relative;
+}
+
+/* line 989, ../scss/_base.scss */
+.fp-carousel-navi ol {
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 200;
+  margin: 0;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  width: auto;
+  display: none;
+}
+/* line 1003, ../scss/_base.scss */
+.fp-carousel-navi ol li a {
+  background-color: #FFF;
+  border: 2px solid #FFF;
+  box-shadow: none;
+  line-height: 0.5em;
+  height: 20px;
+  width: 20px;
+}
+/* line 1012, ../scss/_base.scss */
+.fp-carousel-navi ol li a.flex-active {
+  background-color: transparent;
+}
+/* line 1015, ../scss/_base.scss */
+.fp-carousel-navi ol li a:hover {
+  background-color: transparent;
+}
+@media only screen and (min-width: 650px) {
+  /* line 989, ../scss/_base.scss */
+  .fp-carousel-navi ol {
+    display: block;
+    margin-top: 5px;
+  }
+  /* line 1024, ../scss/_base.scss */
+  .fp-carousel-navi ol li a {
+    height: 11px;
+    width: 11px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  /* line 989, ../scss/_base.scss */
+  .fp-carousel-navi ol {
+    margin-top: 45px;
+  }
+}
+
+/* line 1035, ../scss/_base.scss */
+.fp-carousel {
+  display: none;
+}
+/* line 1038, ../scss/_base.scss */
+.fp-carousel .row {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+/* line 1042, ../scss/_base.scss */
+.fp-carousel .row a {
+  text-decoration: none;
+}
+/* line 1046, ../scss/_base.scss */
+.fp-carousel .row img.main-image {
+  display: none;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1052, ../scss/_base.scss */
+  .fp-carousel .row img.main-image {
+    display: block;
+    width: 50%;
+    float: left;
+  }
+}
+/* line 1060, ../scss/_base.scss */
+.fp-carousel .overflow-image {
+  position: absolute;
+}
+
+/* line 1065, ../scss/_base.scss */
+.fp-carousel-image-link {
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+/* line 1068, ../scss/_base.scss */
+.fp-carousel-image-link .mobile {
+  display: block;
+}
+/* line 1072, ../scss/_base.scss */
+.fp-carousel-image-link .desktop {
+  display: none;
+}
+@media only screen and (min-width: 480px) {
+  /* line 1077, ../scss/_base.scss */
+  .fp-carousel-image-link .mobile {
+    display: none;
+  }
+  /* line 1078, ../scss/_base.scss */
+  .fp-carousel-image-link .desktop {
+    display: block;
+  }
+}
+
+/* line 1082, ../scss/_base.scss */
+.fp-carousel-item {
+  background-repeat: no-repeat;
+  background-position: top center;
+  line-height: 0;
+}
+/* line 1087, ../scss/_base.scss */
+.fp-carousel-item h2 {
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 20px;
+}
+/* line 1093, ../scss/_base.scss */
+.fp-carousel-item p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #FFF;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1082, ../scss/_base.scss */
+  .fp-carousel-item {
+    float: right;
+    width: 50%;
+    padding-left: 5%;
+  }
+  /* line 1103, ../scss/_base.scss */
+  .fp-carousel-item h2 {
+    margin-top: 60px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  /* line 1109, ../scss/_base.scss */
+  .fp-carousel-item h2 {
+    margin-top: 100px;
+    font-size: 2.0em;
+  }
+  /* line 1113, ../scss/_base.scss */
+  .fp-carousel-item p {
+    font-size: 1.125em;
+  }
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1119, ../scss/_base.scss */
+  .fp-carousel-item h2 {
+    font-size: 4.750em;
+  }
+}
+
+/* CUSTOM CAROUSEL ITEMS */
+@media only screen and (min-width: 650px) {
+  /* line 1128, ../scss/_base.scss */
+  .fp-carousel.background-image {
+    height: 20em;
+  }
+}
+@media only screen and (min-width: 800px) {
+  /* line 1128, ../scss/_base.scss */
+  .fp-carousel.background-image {
+    height: 23em;
+  }
+}
+@media only screen and (min-width: 950px) {
+  /* line 1128, ../scss/_base.scss */
+  .fp-carousel.background-image {
+    height: 26em;
+  }
+}
+@media only screen and (min-width: 1150px) {
+  /* line 1128, ../scss/_base.scss */
+  .fp-carousel.background-image {
+    height: 31.25em;
+  }
+}
+
+/* line 1146, ../scss/_base.scss */
+.fp-carousel.actimel-lakka {
+  background-color: #6dcced;
+  background-image: url(../images/fp-carousel-actimel-lakka-bg-repeat.png);
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: auto 100%;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1156, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .row h2 {
+    font-size: 1.6em;
+  }
+  /* line 1159, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .row p {
+    font-size: 0.85em;
+  }
+}
+@media only screen and (min-width: 800px) {
+  /* line 1165, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .row h2 {
+    margin-top: 100px;
+    font-size: 2.0em;
+  }
+  /* line 1169, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .row p {
+    font-size: 1.125em;
+  }
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1175, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .row h2 {
+    font-size: 4em;
+  }
+}
+/* line 1182, ../scss/_base.scss */
+.fp-carousel.actimel-lakka h2 {
+  color: #1d4299;
+}
+/* line 1186, ../scss/_base.scss */
+.fp-carousel.actimel-lakka .overflow-image {
+  bottom: 0;
+  left: -100px;
+  display: none;
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1186, ../scss/_base.scss */
+  .fp-carousel.actimel-lakka .overflow-image {
+    display: block;
+  }
+}
+
+/* line 1196, ../scss/_base.scss */
+.fp-carousel.danonino-dinonkasvimaa {
+  background-color: #51A5EB;
+  background-image: url(../images/fp-carousel-danonino-dinonkasvimaa-bg.png);
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: auto 100%;
+}
+
+/* line 1205, ../scss/_base.scss */
+.lt-ie9 .fp-carousel.danonino-dinonkasvimaa .row img.mobile {
+  width: 480px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* line 1211, ../scss/_base.scss */
+.fp-carousel.actimel-hupikunto {
+  background-image: url(../images/fp-carousel-actimel-hupikunto-bg-repeat.png);
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: auto 100%;
+}
+/* line 1217, ../scss/_base.scss */
+.fp-carousel.actimel-hupikunto h2 {
+  color: #f5e419;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1217, ../scss/_base.scss */
+  .fp-carousel.actimel-hupikunto h2 {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 750px) {
+  /* line 1217, ../scss/_base.scss */
+  .fp-carousel.actimel-hupikunto h2 {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (min-width: 950px) {
+  /* line 1217, ../scss/_base.scss */
+  .fp-carousel.actimel-hupikunto h2 {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  /* line 1217, ../scss/_base.scss */
+  .fp-carousel.actimel-hupikunto h2 {
+    font-size: 3.5em;
+  }
+}
+/* line 1237, ../scss/_base.scss */
+.fp-carousel.actimel-hupikunto p {
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 800px) {
+  /* line 1237, ../scss/_base.scss */
+  .fp-carousel.actimel-hupikunto p {
+    font-size: 1.125em;
+  }
+}
+/* line 1246, ../scss/_base.scss */
+.fp-carousel.actimel-hupikunto .button {
+  background-color: #00428F;
+}
+/* line 1248, ../scss/_base.scss */
+.fp-carousel.actimel-hupikunto .button:hover {
+  background-color: #002a5c;
+}
+
+/* line 1255, ../scss/_base.scss */
+.fp-carousel.actimel-kids {
+  background: #F7F7F7;
+  background: -moz-linear-gradient(top, #ffffff 80%, #e2e2e2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #ffffff), color-stop(100%, #e2e2e2));
+  background: -webkit-linear-gradient(top, #ffffff 80%, #e2e2e2 100%);
+  background: -o-linear-gradient(top, #ffffff 80%, #e2e2e2 100%);
+  background: -ms-linear-gradient(top, #ffffff 80%, #e2e2e2 100%);
+  background: linear-gradient(to bottom, #ffffff 80%, #e2e2e2 100%);
+  /*
+  .fp-carousel-item {
+      padding-left: 0;
+  }
+  */
+}
+/* line 1270, ../scss/_base.scss */
+.fp-carousel.actimel-kids h2 {
+  color: #db2792;
+}
+@media only screen and (min-width: 750px) {
+  /* line 1270, ../scss/_base.scss */
+  .fp-carousel.actimel-kids h2 {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (min-width: 950px) {
+  /* line 1270, ../scss/_base.scss */
+  .fp-carousel.actimel-kids h2 {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  /* line 1270, ../scss/_base.scss */
+  .fp-carousel.actimel-kids h2 {
+    font-size: 3.5em;
+  }
+}
+/* line 1286, ../scss/_base.scss */
+.fp-carousel.actimel-kids h2 > span,
+.fp-carousel.actimel-kids p {
+  color: #1d4299;
+}
+/* line 1291, ../scss/_base.scss */
+.fp-carousel.actimel-kids h2 > span {
+  display: block;
+}
+/* line 1295, ../scss/_base.scss */
+.fp-carousel.actimel-kids .button {
+  background-color: #245c92;
+}
+/* line 1298, ../scss/_base.scss */
+.fp-carousel.actimel-kids .button:hover {
+  background-color: #1a4269;
+}
+
+/* line 1304, ../scss/_base.scss */
+.fp-carousel.activia-hula {
+  background-color: #217a39;
+  background-image: url(../images/fp-carousel-activia-hula-bg-repeat.png);
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: auto 100%;
+}
+/* line 1321, ../scss/_base.scss */
+.fp-carousel.activia-hula h2 {
+  color: #ffe300;
+}
+@media only screen and (min-width: 950px) {
+  /* line 1321, ../scss/_base.scss */
+  .fp-carousel.activia-hula h2 {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1321, ../scss/_base.scss */
+  .fp-carousel.activia-hula h2 {
+    font-size: 4.750em;
+  }
+}
+
+/* line 1335, ../scss/_base.scss */
+.fp-carousel.activia-luonnonjogurtit {
+  background: #d0dfb5;
+  background: linear-gradient(to bottom, white 0%, white 85%, #d0dfb5 100%);
+}
+@media only screen and (min-width: 650px) {
+  /* line 1335, ../scss/_base.scss */
+  .fp-carousel.activia-luonnonjogurtit {
+    background: white url(../images/fp-carousel-activia-luonnonjogurtit-bg.jpg) no-repeat center center;
+    background-size: auto 100%;
+  }
+}
+/* line 1344, ../scss/_base.scss */
+.fp-carousel.activia-luonnonjogurtit .fp-carousel-item {
+  padding-left: 0;
+}
+/* line 1348, ../scss/_base.scss */
+.fp-carousel.activia-luonnonjogurtit h2, .fp-carousel.activia-luonnonjogurtit p {
+  color: #015d23;
+}
+@media only screen and (min-width: 950px) {
+  /* line 1352, ../scss/_base.scss */
+  .fp-carousel.activia-luonnonjogurtit h2 {
+    font-size: 3.5em;
+  }
+}
+/* line 1358, ../scss/_base.scss */
+.fp-carousel.activia-luonnonjogurtit .button {
+  background: #015d23;
+}
+/* line 1361, ../scss/_base.scss */
+.fp-carousel.activia-luonnonjogurtit .button:hover {
+  background-color: #01441a;
+}
+
+/* line 1367, ../scss/_base.scss */
+.fp-carousel.activia-pro {
+  background: #007229;
+}
+/* line 1370, ../scss/_base.scss */
+.fp-carousel.activia-pro .fp-carousel-item {
+  padding-left: 0;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1367, ../scss/_base.scss */
+  .fp-carousel.activia-pro {
+    background-image: url(../images/fp-carousel-activia-pro-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+  }
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1367, ../scss/_base.scss */
+  .fp-carousel.activia-pro {
+    height: 500px;
+  }
+}
+/* line 1387, ../scss/_base.scss */
+.fp-carousel.activia-pro h2 {
+  color: #fff;
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1387, ../scss/_base.scss */
+  .fp-carousel.activia-pro h2 {
+    font-size: 3.5em;
+  }
+}
+
+/* line 1396, ../scss/_base.scss */
+.fp-carousel.activia-laaketiede {
+  background-color: #328f3a;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1396, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede {
+    background-image: url(../images/fp-carousel-activia-laaketiede.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 1086px) {
+  /* line 1396, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede {
+    background-size: auto 100%;
+  }
+}
+@media only screen and (min-width: 650px) {
+  /* line 1396, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede {
+    min-height: 24em;
+  }
+}
+/* line 1416, ../scss/_base.scss */
+.fp-carousel.activia-laaketiede .fp-carousel-item {
+  padding-left: 2%;
+}
+/* line 1420, ../scss/_base.scss */
+.fp-carousel.activia-laaketiede .overflow-image {
+  display: none;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1420, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede .overflow-image {
+    display: block;
+    bottom: 0.5%;
+  }
+}
+/* line 1429, ../scss/_base.scss */
+.fp-carousel.activia-laaketiede h2 {
+  color: #fff;
+}
+@media only screen and (min-width: 650px) {
+  /* line 1429, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede h2 {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 850px) {
+  /* line 1429, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede h2 {
+    font-size: 1.9em;
+  }
+}
+@media only screen and (min-width: 1150px) {
+  /* line 1429, ../scss/_base.scss */
+  .fp-carousel.activia-laaketiede h2 {
+    font-size: 3em;
+  }
+}
+
+/* line 1446, ../scss/_base.scss */
+.fp-carousel.disney-monsterit {
+  background-color: #3399ce;
+  background-image: url(../images/fp-carousel-disney-monsterit-bg.jpg);
+  background-repeat: repeat;
+  background-position: top left;
+}
+/* line 1452, ../scss/_base.scss */
+.fp-carousel.disney-monsterit h2 {
+  color: #fff;
+}
+/* line 1454, ../scss/_base.scss */
+.fp-carousel.disney-monsterit .button {
+  color: #ffe838;
+  background-color: #245c92;
+}
+/* line 1456, ../scss/_base.scss */
+.fp-carousel.disney-monsterit .button:hover {
+  background-color: #1a4269;
+}
+
+/* line 1462, ../scss/_base.scss */
+.fp-carousel.vitalinea-pro {
+  background: white;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkN2Q3ZDciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, white 0%, white 85%, #d7d7d7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(85%, white), color-stop(100%, #d7d7d7));
+  background: -webkit-linear-gradient(top, white 0%, white 85%, #d7d7d7 100%);
+  background: -o-linear-gradient(top, white 0%, white 85%, #d7d7d7 100%);
+  background: -ms-linear-gradient(top, white 0%, white 85%, #d7d7d7 100%);
+  background: linear-gradient(to bottom, white 0%, white 85%, #d7d7d7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7d7d7',GradientType=0 );
+}
+/* line 1474, ../scss/_base.scss */
+.fp-carousel.vitalinea-pro h2, .fp-carousel.vitalinea-pro p {
+  color: #883199;
+}
+@media only screen and (min-width: 950px) {
+  /* line 1476, ../scss/_base.scss */
+  .fp-carousel.vitalinea-pro h2 {
+    font-size: 3.5em;
+  }
+}
+/* line 1482, ../scss/_base.scss */
+.fp-carousel.vitalinea-pro .button {
+  background-color: #883199;
+}
+/* line 1484, ../scss/_base.scss */
+.fp-carousel.vitalinea-pro .button:hover {
+  background-color: #662572;
+}
+
+/* line 1492, ../scss/_base.scss */
+.fp-carousel.vitalinea-pro-maustamaton .fp-carousel-item {
+  padding-left: 0;
+}
+@media only screen and (min-width: 950px) {
+  /* line 1496, ../scss/_base.scss */
+  .fp-carousel.vitalinea-pro-maustamaton h2 {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  /* line 1496, ../scss/_base.scss */
+  .fp-carousel.vitalinea-pro-maustamaton h2 {
+    font-size: 3.5em;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  /* line 1507, ../scss/_base.scss */
+  .fp-carousel.vitalinea-touch-of-fruit {
+    background: white url(../images/fp-carousel-vitalinea-touch-of-fruit-bg.jpg) no-repeat center center;
+    background-size: auto 100%;
+  }
+}
+/* line 1513, ../scss/_base.scss */
+.fp-carousel.vitalinea-touch-of-fruit .fp-carousel-item {
+  padding-left: 0;
+}
+
+/* line 1518, ../scss/_base.scss */
+.fp-carousel.hyvinvointi-alkaa-vatsasta {
+  background: #4b9c2f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #4b9c2f 0%, #017329 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4b9c2f), color-stop(100%, #017329));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #4b9c2f 0%, #017329 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #4b9c2f 0%, #017329 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #4b9c2f 0%, #017329 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #4b9c2f 0%, #017329 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b9c2f', endColorstr='#017329',GradientType=0 );
+  /* IE6-9 */
+}
+/* line 1528, ../scss/_base.scss */
+.fp-carousel.hyvinvointi-alkaa-vatsasta h2, .fp-carousel.hyvinvointi-alkaa-vatsasta p {
+  color: #f0ebd7;
+}
+@media only screen and (min-width: 950px) {
+  /* line 1532, ../scss/_base.scss */
+  .fp-carousel.hyvinvointi-alkaa-vatsasta h2 {
+    font-size: 3.5em;
+  }
+}
+
+/* Small Teasers */
+/* line 1541, ../scss/_base.scss */
+.fp-small-teaser {
+  padding: 0 2%;
+  margin: 30px 0 30px;
+}
+/* line 1546, ../scss/_base.scss */
+.fp-small-teaser h1 {
+  font-size: 1.875em;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1546, ../scss/_base.scss */
+  .fp-small-teaser h1 {
+    min-height: 120px;
+  }
+}
+@media only screen and (min-width: 1075px) {
+  /* line 1546, ../scss/_base.scss */
+  .fp-small-teaser h1 {
+    min-height: 80px;
+  }
+}
+@media only screen and (min-width: 1105px) {
+  /* line 1557, ../scss/_base.scss */
+  .fp-small-teaser .image-container {
+    width: 150px;
+    float: left;
+    margin-right: 15px;
+    height: 150px;
+  }
+}
+/* line 1568, ../scss/_base.scss */
+.fp-small-teaser img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 1578, ../scss/_base.scss */
+.fp-small-teaser .text-content {
+  min-width: 100px;
+  text-align: center;
+  line-height: 1.3em;
+  font-size: 1.063em;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1578, ../scss/_base.scss */
+  .fp-small-teaser .text-content {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1105px) {
+  /* line 1578, ../scss/_base.scss */
+  .fp-small-teaser .text-content {
+    text-align: left;
+    float: right;
+    width: 43%;
+    height: 150px;
+  }
+  /* line 1595, ../scss/_base.scss */
+  .fp-small-teaser .text-content .button {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* line 1604, ../scss/_base.scss */
+.blue h1 {
+  color: #135bad;
+}
+
+/* line 1605, ../scss/_base.scss */
+.green h1 {
+  color: #007549;
+}
+
+/* line 1606, ../scss/_base.scss */
+.red h1 {
+  color: #c7213a;
+}
+
+/* Big teasers */
+/* line 1611, ../scss/_base.scss */
+.fp-big-teaser {
+  position: relative;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-color: #FFF;
+  color: #FFF;
+}
+/* line 1619, ../scss/_base.scss */
+.fp-big-teaser .row {
+  width: 100%;
+}
+/* line 1623, ../scss/_base.scss */
+.fp-big-teaser .col {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+@media only screen and (max-width: 1030px) {
+  /* line 1623, ../scss/_base.scss */
+  .fp-big-teaser .col {
+    background-image: none !important;
+  }
+}
+/* line 1634, ../scss/_base.scss */
+.fp-big-teaser .col .text-content {
+  float: left;
+  width: 52%;
+  padding: 0 2%;
+}
+@media only screen and (max-width: 657px) {
+  /* line 1634, ../scss/_base.scss */
+  .fp-big-teaser .col .text-content {
+    width: 100%;
+  }
+}
+/* line 1643, ../scss/_base.scss */
+.fp-big-teaser .col .text-content h1 {
+  font-size: 2.125em;
+  margin: 50px 0 30px;
+}
+@media only screen and (min-width: 480px) {
+  /* line 1643, ../scss/_base.scss */
+  .fp-big-teaser .col .text-content h1 {
+    font-size: 4.125em;
+    line-height: 1em;
+  }
+}
+/* line 1652, ../scss/_base.scss */
+.fp-big-teaser .col .text-content h2 {
+  margin: 0 0 20px;
+  font-size: 1.5em;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  text-transform: none;
+}
+@media only screen and (min-width: 480px) {
+  /* line 1652, ../scss/_base.scss */
+  .fp-big-teaser .col .text-content h2 {
+    font-size: 2.125em;
+    line-height: 1em;
+  }
+}
+/* line 1663, ../scss/_base.scss */
+.fp-big-teaser .col .text-content .button {
+  margin: 10px 0 40px;
+}
+/* line 1670, ../scss/_base.scss */
+.fp-big-teaser .col .overflow-image {
+  position: absolute;
+  right: 0;
+  bottom: -100px;
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1030px) {
+  /* line 1670, ../scss/_base.scss */
+  .fp-big-teaser .col .overflow-image {
+    bottom: none;
+    top: 20%;
+  }
+}
+@media only screen and (max-width: 657px) {
+  /* line 1670, ../scss/_base.scss */
+  .fp-big-teaser .col .overflow-image {
+    display: none;
+  }
+}
+
+/* line 1693, ../scss/_base.scss */
+.fp-big-teaser.right .col {
+  background-position: left bottom;
+}
+/* line 1696, ../scss/_base.scss */
+.fp-big-teaser.right .col .text-content {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1696, ../scss/_base.scss */
+  .fp-big-teaser.right .col .text-content {
+    width: 60%;
+    float: right;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  /* line 1706, ../scss/_base.scss */
+  .fp-big-teaser.right .overflow-image {
+    right: none;
+    left: 0;
+  }
+}
+
+/* custom teasers */
+/* line 1718, ../scss/_base.scss */
+.fp-big-teaser.danio_sitruunarahka {
+  background-color: #252a67;
+}
+/* line 1721, ../scss/_base.scss */
+.fp-big-teaser.danio_sitruunarahka .col {
+  background-image: url(../images/etusivu_isonosto_danio.jpg);
+}
+/* line 1726, ../scss/_base.scss */
+.fp-big-teaser.danio_sitruunarahka .col .text-content h1 {
+  color: #feeb12;
+}
+/* line 1732, ../scss/_base.scss */
+.fp-big-teaser.danio_sitruunarahka .overflow-image {
+  background-image: url(../images/etusivu_ylimeno_sitruuna.png);
+  bottom: -60px;
+  height: 214px;
+  right: 0;
+  width: 298px;
+}
+
+/* line 1741, ../scss/_base.scss */
+.fp-big-teaser.hyvinvointiohjelma {
+  background: #43a734;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #43a734 0%, #2a771c 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #43a734), color-stop(100%, #2a771c));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #43a734 0%, #2a771c 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #43a734 0%, #2a771c 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #43a734 0%, #2a771c 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #43a734 0%, #2a771c 100%);
+  /* W3C */
+}
+/* line 1750, ../scss/_base.scss */
+.fp-big-teaser.hyvinvointiohjelma .col {
+  background-position: left bottom;
+}
+/* line 1753, ../scss/_base.scss */
+.fp-big-teaser.hyvinvointiohjelma .col .text-content {
+  width: 100%;
+}
+@media only screen and (min-width: 955px) {
+  /* line 1753, ../scss/_base.scss */
+  .fp-big-teaser.hyvinvointiohjelma .col .text-content {
+    width: 62%;
+    float: right;
+  }
+}
+/* line 1763, ../scss/_base.scss */
+.fp-big-teaser.hyvinvointiohjelma .overflow-image {
+  display: none;
+}
+@media only screen and (min-width: 955px) {
+  /* line 1763, ../scss/_base.scss */
+  .fp-big-teaser.hyvinvointiohjelma .overflow-image {
+    display: block;
+    background-image: url(../images/etusivu_ylimeno_hyvinvointiohjelma.png);
+    right: none;
+    left: 60px;
+    top: 25px;
+    width: 384px;
+    height: 372px;
+  }
+}
+
+/* line 1781, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino {
+  background-color: #cf001a;
+}
+@media only screen and (min-width: 955px) {
+  /* line 1781, ../scss/_base.scss */
+  .fp-big-teaser.danonino-dino {
+    background-image: url(../images/etusivu_isonosto_danonino.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 13%;
+  }
+}
+/* line 1786, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino h1 {
+  color: #fee202;
+}
+/* line 1787, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino h1 span {
+  color: #fff;
+  font-size: 0.7em;
+}
+/* line 1789, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino .text-content {
+  width: 96%;
+}
+@media only screen and (min-width: 955px) {
+  /* line 1790, ../scss/_base.scss */
+  .fp-big-teaser.danonino-dino h2, .fp-big-teaser.danonino-dino p {
+    width: 50%;
+  }
+}
+/* line 1795, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino .button {
+  background-color: #fee202;
+  color: #cf001a;
+}
+/* line 1796, ../scss/_base.scss */
+.fp-big-teaser.danonino-dino .button:hover {
+  background-color: #ccb601;
+}
+
+/* Videos */
+/* line 1805, ../scss/_base.scss */
+.videos {
+  background: #4d4d4d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #2b2b2b 0%, #4d4d4d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2b2b2b), color-stop(100%, #4d4d4d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2b2b2b 0%, #4d4d4d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2b2b2b 0%, #4d4d4d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2b2b2b 0%, #4d4d4d 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #2b2b2b 0%, #4d4d4d 100%);
+  /* W3C */
+}
+/* line 1815, ../scss/_base.scss */
+.videos .col {
+  text-align: center;
+  padding-bottom: 40px;
+}
+/* line 1820, ../scss/_base.scss */
+.videos .col h1 {
+  color: #FFF;
+}
+/* line 1824, ../scss/_base.scss */
+.videos .col iframe {
+  width: 80%;
+}
+
+/* Latest products */
+/* line 1833, ../scss/_base.scss */
+.latest {
+  padding-bottom: 50px;
+  background: #3695e4;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d9eeff 0%, #3695e4 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9eeff), color-stop(100%, #3695e4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d9eeff 0%, #3695e4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d9eeff 0%, #3695e4 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d9eeff 0%, #3695e4 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d9eeff 0%, #3695e4 100%);
+  /* W3C */
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+}
+/* line 1846, ../scss/_base.scss */
+.latest .row h1 {
+  text-align: center;
+  color: #00408d;
+}
+/* line 1851, ../scss/_base.scss */
+.latest .row a.col {
+  background-color: #FFF;
+  height: 314px;
+  margin-bottom: 20px;
+  padding: 0 2%;
+  position: relative;
+  text-decoration: none;
+  display: block;
+}
+/* line 1860, ../scss/_base.scss */
+.latest .row a.col .new-product-image {
+  display: block;
+  margin: 34px auto 0;
+}
+/* line 1865, ../scss/_base.scss */
+.latest .row a.col p {
+  text-align: center;
+  font-size: 1.250em;
+  line-height: 1em;
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  width: 88%;
+}
+/* line 1876, ../scss/_base.scss */
+.latest .row a.col.first {
+  margin-left: 0;
+}
+/* line 1881, ../scss/_base.scss */
+.latest .row .overflow-image {
+  display: none;
+  position: absolute;
+  left: -25px;
+  top: 80px;
+  z-index: 2000;
+}
+/* line 1889, ../scss/_base.scss */
+.latest .row .overflow-image.right {
+  left: auto;
+  right: -25px;
+}
+@media only screen and (min-width: 488px) {
+  /* line 1881, ../scss/_base.scss */
+  .latest .row .overflow-image {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 1881, ../scss/_base.scss */
+  .latest .row .overflow-image {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  /* line 1881, ../scss/_base.scss */
+  .latest .row .overflow-image {
+    display: block;
+    left: -140px;
+  }
+  /* line 1905, ../scss/_base.scss */
+  .latest .row .overflow-image.right {
+    left: auto;
+    right: -140px;
+  }
+}
+/* line 1911, ../scss/_base.scss */
+.latest .row .overflow-image.hidden {
+  display: none;
+}
+
+/*********************
+BRAND PAGE STYLES
+*********************/
+/* line 1924, ../scss/_base.scss */
+.brand-frontpage {
+  background-repeat: repeat-y;
+  background-position: top center;
+  padding-bottom: 50px;
+  background-image: url(../images/bg-repeat.png);
+  background-color: #cde5f9;
+}
+/* line 1932, ../scss/_base.scss */
+.brand-frontpage .navi {
+  min-height: 80px;
+}
+/* line 1934, ../scss/_base.scss */
+.brand-frontpage .navi.narrow {
+  min-height: 40px;
+}
+/* line 1939, ../scss/_base.scss */
+.brand-frontpage .attached-image {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1939, ../scss/_base.scss */
+  .brand-frontpage .attached-image {
+    position: relative;
+    top: 50px;
+    z-index: 10000;
+  }
+}
+/* line 1951, ../scss/_base.scss */
+.brand-frontpage .top-teaser .desktop {
+  display: none;
+}
+/* line 1954, ../scss/_base.scss */
+.brand-frontpage .top-teaser .mobile {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1958, ../scss/_base.scss */
+  .brand-frontpage .top-teaser .desktop {
+    display: block;
+  }
+  /* line 1961, ../scss/_base.scss */
+  .brand-frontpage .top-teaser .mobile {
+    display: none;
+  }
+}
+/* line 1967, ../scss/_base.scss */
+.brand-frontpage h1 {
+  font-size: 4em;
+  text-align: center;
+  line-height: 1em;
+  color: #FFF;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1967, ../scss/_base.scss */
+  .brand-frontpage h1 {
+    font-size: 6.000em;
+    text-align: left;
+    margin: 0 0 15px;
+  }
+}
+/* line 1981, ../scss/_base.scss */
+.brand-frontpage h2 {
+  clear: both;
+  font-size: 1.125em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1981, ../scss/_base.scss */
+  .brand-frontpage h2 {
+    text-align: left;
+  }
+}
+/* line 1993, ../scss/_base.scss */
+.brand-frontpage div.product-teaser-container {
+  margin-bottom: 40px;
+}
+/* line 1997, ../scss/_base.scss */
+.brand-frontpage p.teaser-text {
+  font-size: 2.250em;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+  line-height: 1em;
+  margin: 0 0 20px;
+  text-align: center;
+  padding: 0 2%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1997, ../scss/_base.scss */
+  .brand-frontpage p.teaser-text {
+    padding: 0;
+    text-align: left;
+  }
+}
+/* line 2012, ../scss/_base.scss */
+.brand-frontpage p.description {
+  color: #000 !important;
+}
+/* line 2016, ../scss/_base.scss */
+.brand-frontpage p {
+  color: #FFF;
+  font-size: 1.125em;
+  text-align: center;
+  padding: 0 2%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2016, ../scss/_base.scss */
+  .brand-frontpage p {
+    padding: 0;
+    text-align: left;
+  }
+}
+/* line 2027, ../scss/_base.scss */
+.brand-frontpage p:last-child {
+  margin-bottom: 40px;
+}
+/* line 2031, ../scss/_base.scss */
+.brand-frontpage p.facebook {
+  margin-bottom: 0;
+}
+
+/* line 2038, ../scss/_base.scss */
+.brand-frontpage.activia {
+  background-image: url(../images/brandpage-activia-bg-repeat.png);
+  background-color: #007229;
+}
+/* line 2042, ../scss/_base.scss */
+.brand-frontpage.activia .accent {
+  color: #fcf900;
+}
+/* line 2046, ../scss/_base.scss */
+.brand-frontpage.activia .attached-image {
+  top: 0;
+  left: -20px;
+  margin-bottom: -30px;
+}
+
+/* line 2053, ../scss/_base.scss */
+.brand-frontpage.actimel {
+  background-image: url(../images/brandpage-actimel-bg-repeat.png);
+  background-color: #1ea2e3;
+}
+/* line 2057, ../scss/_base.scss */
+.brand-frontpage.actimel .accent {
+  color: #db2792;
+}
+/* line 2061, ../scss/_base.scss */
+.brand-frontpage.actimel .image-container {
+  margin-top: 0;
+  text-align: center;
+}
+/* line 2066, ../scss/_base.scss */
+.brand-frontpage.actimel h1 {
+  color: #00408d;
+}
+/* line 2070, ../scss/_base.scss */
+.brand-frontpage.actimel .attached-image {
+  top: 80px;
+  left: 0;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2076, ../scss/_base.scss */
+  .brand-frontpage.actimel .image-container {
+    margin-top: -58px;
+  }
+}
+
+/* line 2082, ../scss/_base.scss */
+.brand-frontpage.danonino {
+  background-image: url(../images/brandpage-danonino-bg-repeat.png);
+  background-color: #e80321;
+}
+/* line 2086, ../scss/_base.scss */
+.brand-frontpage.danonino .accent {
+  color: #00408d;
+}
+/* line 2090, ../scss/_base.scss */
+.brand-frontpage.danonino .image-container {
+  margin-top: -50px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2095, ../scss/_base.scss */
+  .brand-frontpage.danonino .image-container img {
+    max-width: 105%;
+    top: 40px;
+    margin-left: -10px;
+  }
+}
+
+/* line 2105, ../scss/_base.scss */
+.brand-frontpage.vitalinea {
+  background-image: url(../images/brandpage-vitalinea-bg-repeat.png);
+  background-color: #804790;
+}
+/* line 2109, ../scss/_base.scss */
+.brand-frontpage.vitalinea .accent {
+  color: #94e082;
+}
+/* line 2113, ../scss/_base.scss */
+.brand-frontpage.vitalinea .image-container {
+  margin-top: -100px;
+}
+/* line 2117, ../scss/_base.scss */
+.brand-frontpage.vitalinea .attached-image {
+  top: 50px;
+  left: 30px;
+  margin-top: 90px;
+}
+
+/* line 2124, ../scss/_base.scss */
+.brand-frontpage.danio {
+  background-image: url(../images/brandpage-danio-bg-repeat.png);
+  background-color: #0e5999;
+}
+/* line 2128, ../scss/_base.scss */
+.brand-frontpage.danio .accent {
+  color: #ffe829;
+}
+/* line 2132, ../scss/_base.scss */
+.brand-frontpage.danio .image-container {
+  margin-top: -70px;
+}
+/* line 2136, ../scss/_base.scss */
+.brand-frontpage.danio .attached-image {
+  top: 50px;
+  left: -60px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2136, ../scss/_base.scss */
+  .brand-frontpage.danio .attached-image {
+    max-width: none;
+  }
+}
+
+/* line 2146, ../scss/_base.scss */
+.brand-frontpage.danette {
+  background-image: url(../images/brandpage-danette-bg-repeat.png);
+  background-color: #0a4d9c;
+}
+/* line 2150, ../scss/_base.scss */
+.brand-frontpage.danette .accent {
+  color: #fdf298;
+}
+/* line 2154, ../scss/_base.scss */
+.brand-frontpage.danette .image-container {
+  margin-top: -50px;
+}
+
+/* line 2159, ../scss/_base.scss */
+.brand-frontpage.proviva {
+  background-image: url(../images/brandpage-proviva-bg-repeat.png);
+  background-color: #08aa9c;
+}
+/* line 2163, ../scss/_base.scss */
+.brand-frontpage.proviva .accent {
+  color: #ffdc27;
+}
+/* line 2167, ../scss/_base.scss */
+.brand-frontpage.proviva .image-container {
+  margin-top: -50px;
+}
+/* line 2171, ../scss/_base.scss */
+.brand-frontpage.proviva .attached-image {
+  top: 43px;
+  left: 60px;
+}
+
+/* line 2180, ../scss/_base.scss */
+.brand-frontpage.hedelmajogurtit h1 {
+  color: #00408d;
+}
+/* line 2184, ../scss/_base.scss */
+.brand-frontpage.hedelmajogurtit .accent {
+  color: #21c0e8;
+}
+/* line 2188, ../scss/_base.scss */
+.brand-frontpage.hedelmajogurtit p {
+  color: #00408d;
+}
+/* line 2192, ../scss/_base.scss */
+.brand-frontpage.hedelmajogurtit .image-container {
+  margin-top: -50px;
+}
+/* line 2196, ../scss/_base.scss */
+.brand-frontpage.hedelmajogurtit .attached-image {
+  top: 70px;
+}
+
+/* line 2201, ../scss/_base.scss */
+.brand-frontpage.disney {
+  background-image: url(../images/brandpage-disney-bg-repeat.png);
+  background-color: #3399ce;
+}
+/* line 2205, ../scss/_base.scss */
+.brand-frontpage.disney .accent {
+  color: #00408d;
+}
+/* line 2209, ../scss/_base.scss */
+.brand-frontpage.disney .image-container {
+  margin-top: -50px;
+}
+/* line 2213, ../scss/_base.scss */
+.brand-frontpage.disney .attached-image {
+  top: 70px;
+}
+
+/* line 2218, ../scss/_base.scss */
+.brand-frontpage.danup {
+  background: #000 url(../images/brandpage-danup-bg-mobi.jpg) no-repeat center top;
+        /*h2 {
+            color: #c2c2c2;
+        }
+
+        .brandpage-product-teaser p {
+            color: #adadad;
+        }*/
+}
+@media only screen and (min-width: 768px) {
+  /* line 2218, ../scss/_base.scss */
+  .brand-frontpage.danup {
+    background-image: url(../images/brandpage-danup-bg.jpg);
+  }
+}
+/* line 2225, ../scss/_base.scss */
+.brand-frontpage.danup .accent,
+.brand-frontpage.danup .facebook {
+  color: #ed2b8d;
+}
+/* line 2230, ../scss/_base.scss */
+.brand-frontpage.danup .image-container {
+  margin-top: -60px;
+}
+/* line 2234, ../scss/_base.scss */
+.brand-frontpage.danup .attached-image {
+  top: 0;
+}
+/* line 2238, ../scss/_base.scss */
+.brand-frontpage.danup .content {
+  margin-top: -30px;
+}
+/* line 2242, ../scss/_base.scss */
+.brand-frontpage.danup .properties {
+  top: auto;
+  bottom: 60px;
+}
+/* line 2247, ../scss/_base.scss */
+.brand-frontpage.danup .property {
+  background-color: #e5e5e5;
+}
+
+/* line 2262, ../scss/_base.scss */
+a.brandpage-product-teaser {
+  margin: 0 0 40px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2262, ../scss/_base.scss */
+  a.brandpage-product-teaser {
+    float: left;
+    width: 20%;
+    margin: 0 5% 2% 0;
+  }
+  /* line 2274, ../scss/_base.scss */
+  .hedelmajogurtit a.brandpage-product-teaser {
+    /* Custom tweak for these to make different product sizes look better */
+    width: 28.3%;
+  }
+}
+/* line 2280, ../scss/_base.scss */
+a.brandpage-product-teaser img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 2285, ../scss/_base.scss */
+a.brandpage-product-teaser p {
+  text-align: center;
+  color: #000;
+  font-size: 0.875em;
+  margin-top: 0;
+}
+
+/* line 2293, ../scss/_base.scss */
+.properties {
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2293, ../scss/_base.scss */
+  .properties {
+    left: 0;
+  }
+}
+/* line 2301, ../scss/_base.scss */
+.properties .property {
+  color: #FFF;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  font-size: 1.375em;
+  text-align: center;
+  border-radius: 1em;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+  line-height: 36px;
+}
+/* line 2314, ../scss/_base.scss */
+.properties .lactose {
+  background-color: #83e0f8;
+}
+/* line 2318, ../scss/_base.scss */
+.properties .protein {
+  background-color: #804790;
+  padding-left: 2px;
+}
+
+/*********************
+BRAND CONTENT PAGE STYLES
+*********************/
+/* line 2334, ../scss/_base.scss */
+#content .content .fp-header h1,
+#content .content .subpage-header h1 {
+  margin-top: 0;
+}
+/* line 2338, ../scss/_base.scss */
+#content .content .fp-header .attached-image,
+#content .content .subpage-header .attached-image {
+  margin-bottom: 0;
+}
+/* line 2343, ../scss/_base.scss */
+#content .content .subpage-header {
+  background: none;
+}
+/* line 2346, ../scss/_base.scss */
+#content .content .subpage-header h1 {
+  font-size: 3em;
+  margin-bottom: 0.85em;
+}
+/* line 2353, ../scss/_base.scss */
+#content .content .main-content h4, #content .content .normal-content h4 {
+  margin: 40px 0 0;
+}
+/* line 2357, ../scss/_base.scss */
+#content .content .main-content p, #content .content .normal-content p {
+  margin-top: 0;
+}
+
+/* line 2367, ../scss/_base.scss */
+#content .page-tuotteetactiviatietoapakkauspromootio .subpage-header h1 {
+  font-size: 1.6em;
+}
+
+/*********************
+PRODUCT PAGE STYLES
+*********************/
+/* line 2377, ../scss/_base.scss */
+.product {
+  background-repeat: repeat-y;
+  background-position: top center;
+  padding-bottom: 50px;
+    /*.related-products {
+
+        padding-top: 40px;
+
+        h2 {
+            font-size: 1.250em;
+            color: #666;
+        }
+    }*/
+}
+/* line 2382, ../scss/_base.scss */
+.product .row.navi {
+  min-height: 100px;
+}
+/* line 2385, ../scss/_base.scss */
+.product .row.navi .button {
+  margin-top: 30px;
+  padding-bottom: 6px;
+  float: left;
+  color: #FFF;
+  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 2393, ../scss/_base.scss */
+.product .row.navi .button:hover {
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* line 2400, ../scss/_base.scss */
+.product .row.white {
+  background-color: #FFF;
+  position: relative;
+  padding-bottom: 40px;
+}
+/* line 2406, ../scss/_base.scss */
+.product .main-content {
+  padding: 0 5%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2406, ../scss/_base.scss */
+  .product .main-content {
+    padding: 0 5% 0 0;
+  }
+}
+/* line 2414, ../scss/_base.scss */
+.product .main-content h1 {
+  font-size: 2em;
+  margin: 68px 0 0;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+}
+@media only screen and (min-width: 950px) {
+  /* line 2414, ../scss/_base.scss */
+  .product .main-content h1 {
+    font-size: 3.4em;
+  }
+}
+/* line 2426, ../scss/_base.scss */
+.product .main-content .attached-image {
+  margin: 20px auto;
+  display: block;
+}
+/* line 2431, ../scss/_base.scss */
+.product .main-content .text-content {
+  text-align: center;
+  font-size: 1.125em;
+}
+/* line 2437, ../scss/_base.scss */
+.product .product-info {
+  padding: 0 5%;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2437, ../scss/_base.scss */
+  .product .product-info {
+    padding: 0;
+  }
+}
+/* line 2445, ../scss/_base.scss */
+.product .product-info h2 {
+  margin-top: 70px;
+}
+/* line 2449, ../scss/_base.scss */
+.product .product-info .product-info-data {
+  background-color: #f6f6f6;
+  padding: 15px;
+  font-size: 0.875em;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2449, ../scss/_base.scss */
+  .product .product-info .product-info-data {
+    margin-right: 10%;
+  }
+}
+/* line 2458, ../scss/_base.scss */
+.product .product-info .product-info-data .properties {
+  padding: 0 0 1em 0;
+  position: static;
+}
+/* line 2462, ../scss/_base.scss */
+.product .product-info .product-info-data .properties .property {
+  position: static;
+  float: left;
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+/* line 2469, ../scss/_base.scss */
+.product .product-info .product-info-data .properties h3 {
+  margin: 0.2em 0 1em 0;
+  padding-top: 0.25em;
+  clear: none;
+}
+/* line 2478, ../scss/_base.scss */
+.product .product-info .product-info-data .package-sizes {
+  margin-bottom: 30px;
+}
+/* line 2481, ../scss/_base.scss */
+.product .product-info .product-info-data .package-sizes .package-size {
+  float: left;
+}
+/* line 2484, ../scss/_base.scss */
+.product .product-info .product-info-data .package-sizes .package-size p {
+  width: 75px;
+  text-align: center;
+}
+/* line 2492, ../scss/_base.scss */
+.product .product-info .product-info-data h3 {
+  clear: both;
+  font-size: 1.2em;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  font-weight: 600;
+}
+/* line 2498, ../scss/_base.scss */
+.product .product-info .product-info-data h3:first-child {
+  margin-top: 0;
+}
+/* line 2503, ../scss/_base.scss */
+.product .product-info .product-info-data .ingredients {
+  line-height: 1.2em;
+}
+/* line 2507, ../scss/_base.scss */
+.product .product-info .product-info-data .nutritional-facts {
+  width: 100%;
+}
+/* line 2511, ../scss/_base.scss */
+.product .product-info .product-info-data .nutritional-facts tr:nth-child(odd) {
+  background-color: #FFF;
+}
+/* line 2515, ../scss/_base.scss */
+.product .product-info .product-info-data .nutritional-facts .indent {
+  font-style: italic;
+  color: #666;
+}
+/* line 2518, ../scss/_base.scss */
+.product .product-info .product-info-data .nutritional-facts .indent td:first-child {
+  padding-left: 10px;
+}
+/* line 2523, ../scss/_base.scss */
+.product .product-info .product-info-data .nutritional-facts .right {
+  text-align: right;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2540, ../scss/_base.scss */
+  .product .related-products {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  /* line 2546, ../scss/_base.scss */
+  .product .related-products h2 {
+    width: 100%;
+  }
+}
+
+/* line 2553, ../scss/_base.scss */
+.product.activia, #content .content.activia {
+  background-image: url(../images/brandpage-activia-bg-repeat.png);
+  background-color: #015030;
+}
+/* line 2557, ../scss/_base.scss */
+.product.activia .brand-color, #content .content.activia .brand-color {
+  color: #007549;
+}
+
+/* line 2562, ../scss/_base.scss */
+.product.actimel, #content .content.actimel {
+  background-image: url(../images/brandpage-actimel-bg-repeat.png);
+  background-color: #1ea2e3;
+}
+/* line 2566, ../scss/_base.scss */
+.product.actimel .brand-color, #content .content.actimel .brand-color {
+  color: #135bad;
+}
+
+/* line 2571, ../scss/_base.scss */
+.product.danonino, #content .content.danonino {
+  background-image: url(../images/brandpage-danonino-bg-repeat.png);
+  background-color: #e80321;
+}
+/* line 2575, ../scss/_base.scss */
+.product.danonino .brand-color, #content .content.danonino .brand-color {
+  color: #c7213a;
+}
+
+/* line 2580, ../scss/_base.scss */
+.product.vitalinea, #content .content.vitalinea {
+  background-image: url(../images/brandpage-vitalinea-bg-repeat.png);
+  background-color: #804790;
+}
+/* line 2584, ../scss/_base.scss */
+.product.vitalinea .brand-color, #content .content.vitalinea .brand-color {
+  color: #7f458f;
+}
+
+/* line 2589, ../scss/_base.scss */
+.product.danio, #content .content.danio {
+  background-image: url(../images/brandpage-danio-bg-repeat.png);
+  background-color: #0e5999;
+}
+/* line 2593, ../scss/_base.scss */
+.product.danio .brand-color, #content .content.danio .brand-color {
+  color: #00408d;
+}
+
+/* line 2598, ../scss/_base.scss */
+.product.danette, #content .content.danette {
+  background-image: url(../images/brandpage-danette-bg-repeat.png);
+  background-color: #0a4d9c;
+}
+/* line 2602, ../scss/_base.scss */
+.product.danette .brand-color, #content .content.danette .brand-color {
+  color: #00408d;
+}
+
+/* line 2607, ../scss/_base.scss */
+.product.proviva, #content .content.proviva {
+  background-image: url(../images/brandpage-proviva-bg-repeat.png);
+  background-color: #08aa9c;
+}
+/* line 2611, ../scss/_base.scss */
+.product.proviva .brand-color, #content .content.proviva .brand-color {
+  color: #00408d;
+}
+
+/* line 2616, ../scss/_base.scss */
+.product.hedelmajogurtit, #content .content.hedelmajogurtit {
+  background-image: url(../images/bg-repeat.png);
+  background-color: #cde5f9;
+}
+/* line 2620, ../scss/_base.scss */
+.product.hedelmajogurtit .brand-color, #content .content.hedelmajogurtit .brand-color {
+  color: #00408d;
+}
+
+/* line 2625, ../scss/_base.scss */
+.product.disney, #content .content.disney {
+  background-image: url(../images/brandpage-disney-bg-repeat.png);
+  background-color: #3399ce;
+}
+/* line 2629, ../scss/_base.scss */
+.product.disney .brand-color, #content .content.disney .brand-color {
+  color: #00408d;
+}
+
+/* line 2634, ../scss/_base.scss */
+.product.danup, #content .content.danup {
+  background: #000 url(../images/brandpage-danup-bg-mobi.jpg) no-repeat center top;
+}
+@media only screen and (min-width: 768px) {
+  /* line 2634, ../scss/_base.scss */
+  .product.danup, #content .content.danup {
+    background-image: url(../images/brandpage-danup-bg.jpg);
+  }
+}
+/* line 2641, ../scss/_base.scss */
+.product.danup .brand-color, #content .content.danup .brand-color {
+  color: #ed2b8d;
+}
+
+/* line 2648, ../scss/_base.scss */
+#content .content {
+  background-repeat: repeat-y;
+  background-position: top center;
+  padding-bottom: 50px;
+}
+/* line 2653, ../scss/_base.scss */
+#content .content .row.navi {
+  min-height: 100px;
+}
+/* line 2657, ../scss/_base.scss */
+#content .content .row.white {
+  background-color: #FFF;
+  position: relative;
+  padding-bottom: 40px;
+}
+/* line 2663, ../scss/_base.scss */
+#content .content h1 {
+  margin: 80px 0 40px;
+}
+/* line 2667, ../scss/_base.scss */
+#content .content .attached-image {
+  margin-bottom: 40px;
+}
+
+/*********************
+IFRAME PAGE STYLES
+*********************/
+/* line 2677, ../scss/_base.scss */
+.col.iframe {
+  margin-top: 40px;
+}
+/* line 2681, ../scss/_base.scss */
+.col.iframe iframe {
+  margin: 40px auto;
+  display: block;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* line 2694, ../scss/_base.scss */
+#content {
+  margin-top: 0;
+}
+
+/* line 2698, ../scss/_base.scss */
+.row.content {
+  background-color: #FFF;
+  padding: 5%;
+}
+
+/* end .hentry */
+/* want to style individual post classes? Booya! */
+/* post by id (i.e. post-3) */
+/* general post style */
+/* general article on a page style */
+/* general style on an attatchment */
+/* sticky post style */
+/* hentry class */
+/* style by category (i.e. category-videos) */
+/* style by tag (i.e. tag-news) */
+/* post meta */
+/* line 2731, ../scss/_base.scss */
+.byline {
+  color: #999;
+}
+
+/* entry content */
+/* line 2738, ../scss/_base.scss */
+.entry-content {
+  /*
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */
+}
+/* line 2773, ../scss/_base.scss */
+.entry-content dd {
+  margin-left: 0;
+  font-size: 0.9em;
+  color: #787878;
+  margin-bottom: 1.5em;
+}
+/* line 2780, ../scss/_base.scss */
+.entry-content img {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  height: auto;
+}
+/* line 2796, ../scss/_base.scss */
+.entry-content video, .entry-content object {
+  max-width: 100%;
+  height: auto;
+}
+/* line 2801, ../scss/_base.scss */
+.entry-content pre {
+  background: #eee;
+  border: 1px solid #cecece;
+  padding: 10px;
+}
+
+/* end .entry-content */
+/* line 2809, ../scss/_base.scss */
+.wp-caption {
+  background: #eee;
+  padding: 5px;
+  /* images inside wp-caption */
+}
+/* line 2814, ../scss/_base.scss */
+.wp-caption img {
+  margin-bottom: 0;
+  width: 100%;
+}
+/* line 2819, ../scss/_base.scss */
+.wp-caption p.wp-caption-text {
+  font-size: 0.85em;
+  margin: 4px 0 7px;
+  text-align: center;
+}
+
+/* end .wp-caption */
+/* image gallery styles */
+/* end .gallery */
+/* gallery caption styles */
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+/* line 2856, ../scss/_base.scss */
+.page-navigation,
+.wp-prev-next {
+  margin: 1.1em 0 2.2em;
+}
+
+/* line 2860, ../scss/_base.scss */
+.bones_page_navi {
+  /* current page link */
+  /* end .bones_page_navi .bpn-current */
+  /* common styles for page-navi links */
+  /* remove the bg on end links */
+  /* previous link */
+  /* next page link */
+  /* first page link */
+  /* last page link */
+}
+/* line 2862, ../scss/_base.scss */
+.bones_page_navi li {
+  float: left;
+  margin-left: 10px;
+}
+/* line 2866, ../scss/_base.scss */
+.bones_page_navi li a {
+  padding: 3px 6px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+/* line 2872, ../scss/_base.scss */
+.bones_page_navi li a:hover, .bones_page_navi li a:focus {
+  color: #f01d4f;
+  text-decoration: underline;
+}
+/* line 2882, ../scss/_base.scss */
+.bones_page_navi li.bpn-current {
+  padding: 3px 6px;
+  border-bottom: 2px solid #f01d4f;
+  position: relative;
+}
+/* line 2887, ../scss/_base.scss */
+.bones_page_navi li.bpn-current a {
+  /* hovering on current page link */
+}
+/* line 2897, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link,
+.bones_page_navi li.bpn-next-link {
+  font-weight: 700;
+}
+/* line 2901, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link a,
+.bones_page_navi li.bpn-next-link a {
+  padding: 0;
+}
+/* line 2907, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link a:hover,
+.bones_page_navi li.bpn-next-link a:hover,
+.bones_page_navi li.bpn-first-page-link a:hover,
+.bones_page_navi li.bpn-last-page-link a:hover {
+  background: none;
+}
+
+/* end .bones_page_navi */
+/* fallback previous & next links */
+/* line 2953, ../scss/_base.scss */
+.wp-prev-next .prev-link {
+  float: left;
+}
+/* line 2957, ../scss/_base.scss */
+.wp-prev-next .next-link {
+  float: right;
+}
+
+/* end .wp-prev-next */
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+/* h3 comment title */
+/* line 2968, ../scss/_base.scss */
+#comments {
+  /* number of comments span */
+}
+
+/* line 2985, ../scss/_base.scss */
+.commentlist {
+  /* general comment classes */
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* comment meta */
+  /* comment content */
+  /* end .commentlist .comment_content */
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */
+}
+/* line 2987, ../scss/_base.scss */
+.commentlist li {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  list-style-type: none;
+  margin-bottom: 1.5em;
+  padding: 0.7335em 10px;
+  /* end .commentlist li ul.children */
+}
+/* line 2995, ../scss/_base.scss */
+.commentlist li:last-child {
+  margin-bottom: 0;
+}
+/* line 2999, ../scss/_base.scss */
+.commentlist li ul.children {
+  margin: 0;
+  /* variations */
+  /* change number for different depth */
+}
+/* line 3017, ../scss/_base.scss */
+.commentlist li[class*=depth-] {
+  margin-top: 1.1em;
+}
+/* line 3021, ../scss/_base.scss */
+.commentlist li.depth-1 {
+  margin-left: 0;
+  margin-top: 0;
+}
+/* line 3026, ../scss/_base.scss */
+.commentlist li:not(.depth-1) {
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+/* line 3040, ../scss/_base.scss */
+.commentlist .odd {
+  background: #eee;
+}
+/* line 3043, ../scss/_base.scss */
+.commentlist .even {
+  background: #fefefe;
+}
+/* line 3058, ../scss/_base.scss */
+.commentlist .vcard {
+  margin-left: 50px;
+}
+/* line 3061, ../scss/_base.scss */
+.commentlist .vcard cite.fn {
+  font-weight: 700;
+  font-style: normal;
+}
+/* line 3069, ../scss/_base.scss */
+.commentlist .vcard time {
+  float: right;
+}
+/* line 3072, ../scss/_base.scss */
+.commentlist .vcard time a {
+  color: #999;
+  text-decoration: none;
+}
+/* line 3076, ../scss/_base.scss */
+.commentlist .vcard time a:hover {
+  text-decoration: underline;
+}
+/* line 3086, ../scss/_base.scss */
+.commentlist .vcard img.avatar {
+  position: absolute;
+  left: 10px;
+  padding: 2px;
+  border: 1px solid #cecece;
+  background: #fff;
+}
+/* line 3111, ../scss/_base.scss */
+.commentlist .comment_content {
+  margin-left: 50px;
+}
+/* line 3114, ../scss/_base.scss */
+.commentlist .comment_content p {
+  margin: 0.7335em 0 1.5em;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+/* line 3123, ../scss/_base.scss */
+.commentlist .comment-reply-link {
+  text-decoration: none;
+  float: right;
+  background: #4598bb;
+  padding: 3px 5px;
+  color: #fff;
+  opacity: 0.65;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+/* line 3134, ../scss/_base.scss */
+.commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
+  opacity: 1;
+}
+
+/* end .commentlist */
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+/* line 3147, ../scss/_base.scss */
+.respond-form {
+  margin: 1.5em 10px;
+  padding-bottom: 2.2em;
+}
+/* line 3151, ../scss/_base.scss */
+.respond-form form {
+  margin: 0.75em 0;
+}
+/* line 3154, ../scss/_base.scss */
+.respond-form form li {
+  list-style-type: none;
+  clear: both;
+  margin-bottom: 0.7335em;
+}
+/* line 3159, ../scss/_base.scss */
+.respond-form form li label,
+.respond-form form li small {
+  display: none;
+}
+/* line 3165, ../scss/_base.scss */
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url],
+.respond-form form textarea {
+  padding: 3px 6px;
+  background: #efefef;
+  border: 2px solid #cecece;
+  line-height: 1.5em;
+  /* form validation */
+}
+/* line 3174, ../scss/_base.scss */
+.respond-form form input[type=text]:focus,
+.respond-form form input[type=email]:focus,
+.respond-form form input[type=url]:focus,
+.respond-form form textarea:focus {
+  background: #fff;
+}
+/* line 3179, ../scss/_base.scss */
+.respond-form form input[type=text]:invalid,
+.respond-form form input[type=email]:invalid,
+.respond-form form input[type=url]:invalid,
+.respond-form form textarea:invalid {
+  outline: none;
+  border-color: #fbc2c4;
+  background-color: #f6e7eb;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+/* line 3190, ../scss/_base.scss */
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url] {
+  max-width: 400px;
+  min-width: 250px;
+}
+/* line 3197, ../scss/_base.scss */
+.respond-form form textarea {
+  resize: none;
+  width: 97.3%;
+  height: 150px;
+}
+
+/* comment submit button */
+/* comment form title */
+/* line 3210, ../scss/_base.scss */
+#comment-form-title {
+  margin: 0 0 1.1em;
+}
+
+/* cancel comment reply link */
+/* logged in comments */
+/* allowed tags */
+/* line 3223, ../scss/_base.scss */
+#allowed_tags {
+  margin: 1.5em 10px 0.7335em 0;
+}
+
+/* no comments */
+/* line 3228, ../scss/_base.scss */
+.nocomments {
+  margin: 0 20px 1.1em;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+/* line 3244, ../scss/_base.scss */
+.widget ul li {
+  /* deep nesting */
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+/* line 3265, ../scss/_base.scss */
+.footer {
+  background-color: #a359a6;
+  color: #FFF;
+  clear: both;
+}
+/* line 3274, ../scss/_base.scss */
+.footer .copyright {
+  padding: 28px 0 0;
+}
+/* line 3279, ../scss/_base.scss */
+.footer .social-media {
+  padding: 19px 0 0;
+  text-align: right;
+}
+/* line 3283, ../scss/_base.scss */
+.footer .social-media a {
+  color: #FFF;
+  font-size: 1.875em;
+  margin-left: 10px;
+}
+
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+/* end .footer-links */
+/*********************
+MEDIABANK
+*********************/
+/* line 3314, ../scss/_base.scss */
+.attachments {
+  border-top: 3px solid #f6f6f6;
+  padding: 2em 0 0;
+}
+/* line 3318, ../scss/_base.scss */
+.attachments .attachment {
+  display: block;
+  vertical-align: top;
+  margin: 0 2% 2em 0;
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.875em;
+  line-height: 1em;
+}
+@media only screen and (min-width: 768px) {
+  /* line 3318, ../scss/_base.scss */
+  .attachments .attachment {
+    display: inline-block;
+    width: 23%;
+  }
+}
+/* line 3332, ../scss/_base.scss */
+.attachments .attachment a:first-child {
+  text-decoration: none;
+  color: #000;
+}
+/* line 3337, ../scss/_base.scss */
+.attachments .attachment .attachment-title {
+  min-height: 2em;
+  margin-bottom: -5px;
+  position: relative;
+}
+/* line 3343, ../scss/_base.scss */
+.attachments .attachment img {
+  width: auto;
+  height: auto;
+  margin: 0 0 10px !important;
+}
+/* line 3349, ../scss/_base.scss */
+.attachments .attachment .attachment-icon {
+  margin: 10px auto 25px;
+}
+/* line 3353, ../scss/_base.scss */
+.attachments .attachment .attachment-size {
+  font-size: 0.929em;
+}
+
+/* line 3359, ../scss/_base.scss */
+.attachments-frontpage {
+  border-top: none;
+  padding: 0;
+}
+@media only screen and (min-width: 768px) {
+  /* line 3363, ../scss/_base.scss */
+  .attachments-frontpage .attachment {
+    width: 30.5%;
+  }
+}
+
+/* line 3370, ../scss/_base.scss */
+.attachment-icon {
+  display: block;
+  background: url(../images/attachment-icon.png) no-repeat;
+  width: 82px;
+  height: 110px;
+  padding-top: 50px;
+  font-size: 2.07em;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  text-align: center;
+}
+
+/*********************
+FEEDBACK FORM
+*********************/
+/* line 3388, ../scss/_base.scss */
+.form-vertical label, .form-vertical input, .form-vertical select, .form-vertical textarea,
+.gform_wrapper label,
+.gform_wrapper input,
+.gform_wrapper select,
+.gform_wrapper textarea {
+  display: block;
+}
+/* line 3392, ../scss/_base.scss */
+.form-vertical input, .form-vertical select, .form-vertical textarea, .form-vertical .note,
+.gform_wrapper input,
+.gform_wrapper select,
+.gform_wrapper textarea,
+.gform_wrapper .note {
+  margin-bottom: 0.7em;
+}
+/* line 3396, ../scss/_base.scss */
+.form-vertical input[type=text], .form-vertical input[type=email], .form-vertical input[type=tel], .form-vertical select, .form-vertical textarea,
+.gform_wrapper input[type=text],
+.gform_wrapper input[type=email],
+.gform_wrapper input[type=tel],
+.gform_wrapper select,
+.gform_wrapper textarea {
+  width: 100%;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+}
+/* line 3401, ../scss/_base.scss */
+.form-vertical input, .form-vertical select,
+.gform_wrapper input,
+.gform_wrapper select {
+  max-width: 380px;
+}
+/* line 3405, ../scss/_base.scss */
+.form-vertical input[type=submit],
+.gform_wrapper input[type=submit] {
+  margin-top: 1.5em;
+}
+/* line 3409, ../scss/_base.scss */
+.form-vertical label.required:after,
+.form-vertical .gfield_required,
+.gform_wrapper label.required:after,
+.gform_wrapper .gfield_required {
+  content: '*';
+  margin-left: 0.2em;
+  color: #f00;
+}
+/* line 3416, ../scss/_base.scss */
+.form-vertical fieldset,
+.gform_wrapper fieldset {
+  padding: 0;
+  margin-bottom: 1.5em;
+  border: none;
+}
+/* line 3421, ../scss/_base.scss */
+.form-vertical fieldset legend,
+.form-vertical fieldset .gsection_title,
+.gform_wrapper fieldset legend,
+.gform_wrapper fieldset .gsection_title {
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  text-transform: uppercase;
+}
+/* line 3430, ../scss/_base.scss */
+.form-vertical .note,
+.form-vertical .gfield_description,
+.gform_wrapper .note,
+.gform_wrapper .gfield_description {
+  font-size: 0.813em;
+  margin-top: -0.5em;
+}
+/* line 3436, ../scss/_base.scss */
+.form-vertical .help-block ul,
+.gform_wrapper .help-block ul {
+  margin: -0.5em 0 0.7em;
+}
+/* line 3441, ../scss/_base.scss */
+.form-vertical .warning .help-block,
+.gform_wrapper .warning .help-block {
+  display: none;
+}
+/* line 3448, ../scss/_base.scss */
+.form-vertical .error input, .form-vertical .error select, .form-vertical .error textarea,
+.form-vertical .gfield_error input,
+.form-vertical .gfield_error select,
+.form-vertical .gfield_error textarea,
+.gform_wrapper .error input,
+.gform_wrapper .error select,
+.gform_wrapper .error textarea,
+.gform_wrapper .gfield_error input,
+.gform_wrapper .gfield_error select,
+.gform_wrapper .gfield_error textarea {
+  background: #fff6f6;
+}
+/* line 3451, ../scss/_base.scss */
+.form-vertical .error .help-block,
+.form-vertical .error .validation_message,
+.form-vertical .gfield_error .help-block,
+.form-vertical .gfield_error .validation_message,
+.gform_wrapper .error .help-block,
+.gform_wrapper .error .validation_message,
+.gform_wrapper .gfield_error .help-block,
+.gform_wrapper .gfield_error .validation_message {
+  display: block;
+  color: #f00;
+  font-size: 100%;
+}
+/* line 3457, ../scss/_base.scss */
+.form-vertical .error .validation_message,
+.form-vertical .gfield_error .validation_message,
+.gform_wrapper .error .validation_message,
+.gform_wrapper .gfield_error .validation_message {
+  margin-bottom: 0.7em;
+}
+
+/*********************
+SOCIALFEED
+*********************/
+/* line 3468, ../scss/_base.scss */
+.socialfeed {
+  background-color: #f4f4f4;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+}
+/* line 3475, ../scss/_base.scss */
+.socialfeed h1 {
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #00408d;
+  text-align: center;
+}
+/* line 3482, ../scss/_base.scss */
+.socialfeed .single-column {
+  position: relative;
+}
+/* line 3484, ../scss/_base.scss */
+.socialfeed .single-column .socialfeed-item .item-container {
+  padding-bottom: 50px;
+}
+/* line 3489, ../scss/_base.scss */
+.socialfeed .multi-column {
+  position: absolute;
+}
+/* line 3493, ../scss/_base.scss */
+.socialfeed .icon-facebook, .socialfeed .icon-twitter {
+  background-image: url("//frantic.s3.amazonaws.com/danone/socialfeed/danone-facebook.png");
+}
+/* line 3497, ../scss/_base.scss */
+.socialfeed .socialfeed-more.socialfeed-load-older-items {
+  text-align: center;
+}
+/* line 3501, ../scss/_base.scss */
+.socialfeed button {
+  display: inline;
+  font-family: "Geogrotesque-Bold", Arial, serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.004);
+  color: #fff;
+  background-color: #00408d;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  margin: 0;
+  padding: 11px 28px;
+}
+
+/* line 3520, ../scss/_base.scss */
+.socialfeed-item {
+  display: block;
+  position: absolute;
+  margin: 0;
+}
+/* line 3525, ../scss/_base.scss */
+.socialfeed-item .item-container {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+/* line 3531, ../scss/_base.scss */
+.socialfeed-item .item-shadow {
+  -webkit-box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
+}
+/* line 3537, ../scss/_base.scss */
+.socialfeed-item img {
+  margin: 0;
+  padding: 0;
+}
+/* line 3541, ../scss/_base.scss */
+.socialfeed-item a {
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+}
+/* line 3547, ../scss/_base.scss */
+.socialfeed-item a:active, .socialfeed-item a:hover {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+}
+/* line 3553, ../scss/_base.scss */
+.socialfeed-item .item-icon {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: 10px;
+  left: 10px;
+  background-repeat: no-repeat;
+  background-size: 23px 23px;
+  background-position: top center;
+}
+/* line 3563, ../scss/_base.scss */
+.socialfeed-item .item-from {
+  margin-left: 55px;
+  padding-top: 10px;
+  font-size: 10px;
+  color: #a456a8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 3572, ../scss/_base.scss */
+.socialfeed-item .item-date {
+  margin-left: 55px;
+  font-size: 10px;
+  color: #000000;
+}
+/* line 3577, ../scss/_base.scss */
+.socialfeed-item .item-message {
+  font-size: 19px;
+  line-height: 22px;
+  margin: 23px 16px 0;
+  padding: 0 0 23px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* line 3586, ../scss/_base.scss */
+.socialfeed-item .item-image a {
+  line-height: 0;
+  display: block;
+}
+/* line 3590, ../scss/_base.scss */
+.socialfeed-item .item-image img {
+  width: 100%;
+  height: auto;
+}
+/* line 3595, ../scss/_base.scss */
+.socialfeed-item .item-error {
+  color: red;
+}
+
+/* line 3600, ../scss/_base.scss */
+.loadmore {
+  text-align: center;
+}
+
+/* line 3604, ../scss/_base.scss */
+.socialfeed-error {
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}
+
+/*
+you can call the larger styles if you want, but there's really no need
+*/
+/* line 31, ../scss/ie.scss */
+#navi-trigger {
+  display: none;
+}
+
+/* line 34, ../scss/ie.scss */
+#main-navigation-container {
+  display: block;
+}
+
+/* line 35, ../scss/ie.scss */
+#menu-main-menu, #menu-paanavigaatio {
+  display: block;
+}
+/* line 38, ../scss/ie.scss */
+#menu-main-menu li, #menu-paanavigaatio li {
+  margin-left: 5px;
+  font-size: 0.9em;
+  float: left;
+}
+
+/* line 45, ../scss/ie.scss */
+#mobile-navigation-container {
+  display: none;
+}
+
+/* line 49, ../scss/ie.scss */
+.brand-navi a.logo-link {
+  float: left;
+  width: 25%;
+  height: 100px;
+  display: block;
+  text-align: center;
+  padding: 80px 10px 0 10px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 0.938em;
+  line-height: 1em;
+  color: #000;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

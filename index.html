@@ -1,9 +1,278 @@
-<!DOCTYPE html>
-<html>
-	<body class="single single-post postid-652 single-format-standard">
-		<div class="articleImage" style="width:600px;height:600px">
-			<canvas id="RopeDrawingArea" style="background-color: white;">You need a internet browser that support html5 canvas&#8230;</canvas>
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+
+        
+
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Load fonts from Typekit -->
+                        <script src="http://use.typekit.net/sin1ong.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
+        <!-- Load local webfonts -->
+        <link rel="stylesheet" type="text/css" href="assets/css/MyFontsWebfontsKit.css">
+       
+        <link rel="pingback" href="http://www.danone.fi/xmlrpc.php">
+
+<title>hula | Danone</title>
+<meta name="robots" content="noindex,follow"/>
+<link rel="canonical" href="http://www.danone.fi/activia-hula/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="hula | Danone" />
+<meta property="og:url" content="http://www.danone.fi/activia-hula/" />
+<meta property="og:site_name" content="Danone" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="hula | Danone"/>
+<meta name="twitter:domain" content="Danone"/>
+<link rel='stylesheet' id='open-sans-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='bones-stylesheet-css'  href='assets/css/style.css?v9-7' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='bones-ie-only-css'  href='assets/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='assets/js/jquery.js'></script>
+<script type='text/javascript' src='assets/js/jquery-migrate.min.js'></script>
+<link rel='shortlink' href='http://www.danone.fi/?p=1261' />
+    </head>
+
+    <body>
+
+        <div id="container">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/hulacampaign.css" />
+		
+	<article id="campaign-hula">
+		<div class="heading fullwidth clearfix">
+			<div class="corner-container">
+				<img class="corner" src="assets/img/corner.png" alt="" />
+				<img id="badge" src="assets/img/badge2.png" alt="" />
+			</div>
+			
 		</div>
-		<script type="text/javascript" src="ropeCore.js"></script>
-	</body>
+		<div id="game-container">
+			<div class="text">
+				<h1>Vatsa kohti Havaijia</h1>
+				<h2>Hulauta itsesi mukaan kilpailuun!</h2>
+			</div>
+			<div class="canvas fullwidth">
+				<div id="time"></div>
+				<canvas id="HulaDrawingArea" renderMethod="auto" onload="hulaCore.Initialize(this, this)">Tämän sisällön näyttämiseen tarvitaan HTML5 yhteensopiva selain</canvas>
+				<div id="progress">
+					<div id="meter" class="meter">
+						<span id="progressbar" style="height: 0%"></span>
+					</div>
+					<span id="one" class="goal auto one active"><span class="number">1</span><span class="arrow"></span></span>
+					<span id="two" class="goal auto two"><span class="number">2</span><span class="arrow"></span></span>
+					<span id="three" class="goal auto three"><span class="number">3</span><span class="arrow"></span></span>
+					<span id="four" class="goal auto four"><span class="number">4</span><span class="arrow"></span></span>
+				</div>
+			</div>
+			<a class="button help" onClick="hulaCore.openModal('modal_start');">?</a>
+			<div class="products fullwidth clearfix">
+				<img class="badge3" src="assets/img/badge3.png" alt="" />
+				<img src="assets/img/tuotteet.png" alt="tuotteet" />
+			</div>
+		</div>
+		<div id="overlay" class="overlay">
+			<div id="modal1" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h3><span class="goal right active"><span class="number">1</span><span class="arrow"></span></span>Jatka samaan malliin!</h3>
+						<img src="assets/img/tuote1.png" alt="" />
+						<p>Activian Mansikka-välipalarahka maistuu kesäiselle mansikalle ja antaa energiaa hulautteluun!</p>
+						<a class="button" onClick="hulaCore.closeModal(this.parentNode.parentNode.parentNode);">Jatka</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal2" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h3><span class="goal right active"><span class="number">2</span><span class="arrow"></span></span>Hyvin pyörii!</h3>
+						<img src="assets/img/tuote2.png" alt="" />
+						<p>Jos nälkä yllättää kesken hulauttelun, nappaa välipalaksi täyteläinen Mustikka-välipalarahka.<br /><br /></p>
+						<a class="button" onClick="hulaCore.closeModal(this.parentNode.parentNode.parentNode);">Jatka</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal3" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h3><span class="goal right active"><span class="number">3</span><span class="arrow"></span></span>Vielä muutama hulautus!</h3>
+						<img src="assets/img/tuote3.png" alt="" />
+						<p>Nyt ei kannata luovuttaa! Herkullisen vaniljanmakuisen välipalarahkan voimalla jaksaa hulautella loppuun asti.</p>
+						<a class="button" onClick="hulaCore.closeModal(this.parentNode.parentNode.parentNode);">Jatka</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal_start" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<img class="corner" src="assets/img/corner.png" alt="" />
+					<img class="badge2" src="assets/img/badge2.png" alt="" />
+					<div class="content">
+						<h2>Aloha!</h2>
+						<h3>Osallistu kesän hulauttavimpaan kilpailuun ja voita matka Havaijille</h3>
+						<div id="computer">
+							<img src="assets/img/ohje.png" alt="" />
+							<p>Osallistumaan pääset pyörittämällä hulavannetta. Jos hulauttelu ei heti suju, ei hätää – voit aina kokeilla uudelleen. Kutsu myös kaverit mukaan hulauttelemaan!</p>
+						</div>
+						<div id="mobile" style="display: none;">
+							<img src="assets/img/ohje_mobile.png" alt="" />
+							<p>Osallistumaan pääset pyörittämällä puhelintasi niin, että saat hulavanteen pyörimään. Jos hulauttelu ei heti suju, ei hätää – voit aina kokeilla uudelleen. Kutsu myös kaverit mukaan hulauttelemaan!</p>
+						</div>
+						<a class="button" onClick="hulaCore.closeModal(this.parentNode.parentNode.parentNode);">Pelaa</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal_end" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h2>Havaiji, täältä tullaan!</h2>
+						<p>Onneksi olkoon, hulautit itsesi mukaan kilpailuun.<br /> Täytä vielä tietosi alla oleviin kenttiin ja olet mukana Havaiji-matkalahjakortin arvonnassa (arvo&nbsp;5&nbsp;500&nbsp;€).</p>
+						<form id="hulaForm" action="https://formdb.frantic.com/submit/activia-hula/" method="post">
+							<input type="hidden" name="formdb_return_url" value="assets/js/thanks.js" />
+							<ul class="input-list clearfix">
+								<li><input class="text" required type="text" name="etunimi" value="" placeholder="Etunimi" /></li>
+								<li><input class="text" required type="text" name="sukunimi" value="" placeholder="Sukunimi" /></li>
+								<li><input class="text" required type="email" name="sahkoposti" value="" placeholder="Sähköpostiosoite" /></li>
+							</ul>
+							<ul class="check-list clearfix">
+								<li>
+									<input id="emails" type="checkbox" name="emails" value="yes" />
+									<span><label for="emails">Minulle saa lähettää Danonelta sähköistä markki&shy;nointi&shy;viestintää.</label></span>
+								</li>
+								<li>
+									<input id="kaleva" type="checkbox" name="kaleva" value="yes" />
+									<span><label for="kaleva">Haluan saada CWT Kaleva Travelin parhaat tarjoukset ja matka&shy;vinkit suoraan sähkö&shy;postiini.</label></span>
+								</li>
+
+								<li>
+									<input id="rules" type="checkbox" name="rules" value="yes" required />
+									<span><label for="rules">Hyväksyn arvonnan&nbsp;</label> <a onClick="hulaCore.closeModal(document.getElementById('modal_end'));hulaCore.openModal('modal_rules');">säännöt.</a></span>
+								</li>
+							</ul>
+							<input id="hula-time" type="hidden" name="aika" value="" />
+							<div class="form-submit">
+								<input id="contact-submit" onclick="setTimeout(function(){adf.track(13375,2945847)},0);" class="button" type="submit" value="Lähetä" />
+							</div>
+						</form>
+						<a class="button close" onClick="hulaCore.reset();">Pelaa uudelleen</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal_ie" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h2>Havaiji, täältä tullaan!</h2>
+						<p>Valitettavasti selaimesi ei tue Hula-peliä.<br/> Voit kuitenkin osallistua Havaijin matkan arvontaan täyttämällä yhteystietosi.<br /> Täytä vielä tietosi alla oleviin kenttiin ja olet mukana Havaiji-matkalahjakortin arvonnassa (arvo&nbsp;5&nbsp;500&nbsp;€).</p>
+						<form id="hulaFormIE" action="https://formdb.frantic.com/submit/activia-hula/" method="post">
+							<input type="hidden" name="formdb_return_url" value="http://www.danone.fi/wp-content/themes/danone/library/campaign/hula/thanks.html" />
+							<ul class="input-list clearfix">
+								<li><input class="text" required type="text" name="etunimi" value="" placeholder="Etunimi" /></li>
+								<li><input class="text" required type="text" name="sukunimi" value="" placeholder="Sukunimi" /></li>
+								<li><input class="text" required type="email" name="sahkoposti" value="" placeholder="Sähköpostiosoite" /></li>
+							</ul>
+							<ul class="check-list clearfix">
+								<li>
+									<input id="emails" type="checkbox" name="emails" value="yes" />
+									<span><label for="emails">Minulle saa lähettää Danonelta sähköistä markki&shy;nointi&shy;viestintää.</label></span>
+								</li>
+								<li>
+									<input id="kaleva" type="checkbox" name="kaleva" value="yes" />
+									<span><label for="kaleva">Haluan saada CWT Kaleva Travelin parhaat tarjoukset ja matka&shy;vinkit suoraan sähkö&shy;postiini.</label></span>
+								</li>
+
+								<li>
+									<input id="rules" type="checkbox" name="rules" value="yes" required />
+									<span><label for="rules">Hyväksyn arvonnan&nbsp;</label> <a onClick="hulaCore.closeModal(document.getElementById('modal_end'));hulaCore.openModal('modal_rules');">säännöt.</a></span>
+								</li>
+							</ul>
+							<input id="hula-time" type="hidden" name="aika" value="" />
+							<div class="form-submit">
+								<input id="contact-submit" class="button" type="submit" value="Lähetä" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="modal_rules" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h2>Arvonnan säännöt</h2>
+						<ol>
+							<li>
+								<h3>Järjestäjä</h3>
+								<p>Activia / Danone Finland Oy (Malminkatu 30, PL 1199, 00101 Helsinki), jäljempänä ”Danone”.</p>
+							</li>
+							<li>
+								<h3>Osallistumis&shy;oikeus ja kampanja-aika</h3>
+								<p>Arvontaan voi osallistua osoitteessa www.danone.fi/hula pelaamalla Activian hula-hula-peliä ja jättämällä yhteystietonsa pelin yhteydessä. Arvontaan osallistuvat kaikki yhteystietonsa 30.9.2013 mennessä lähettäneet. Arvontaan eivät voi osallistua arvonnan toteuttamisessa mukana olevien yritysten henkilökunta ja heidän lähipiirinsä. Arvontaan ei voi osallistua muulla tavoin kuin edellä mainitun verkkosivuston kautta.</p>
+								<p>Danone varaa oikeuden keskeyttää kampanja edellä mainittua ajankohtaa aikaisemmin tai siirtää viimeistä arvontaan osallistumispäivää eteenpäin.</p>
+							</li>
+							<li>
+								<h3>Palkinnot ja voittaminen</h3>
+								<p>Arvontaan osallistuneiden kesken arvotaan yksi (1) CWT Kaleva Travelin lahjakortti, joka oikeuttaa CWT Kaleva Travelin valikoimaan kuuluvaan Havaijin-matkaan. Lahjakortin arvo on 5 500 euroa. Lahjakortti on voimassa yhden (1) vuoden sen kirjoittamispäivästä lukien, minä aikana voittaja voi vapaasti valita matka-ajankohdan. Lahjakortti on käytettävissä ainoastaan Havaijin-matkaan lahjakortin ehtojen mukaisesti, eikä sitä voi vaihtaa rahaksi tai muuhun tuotteeseen tai palveluun. Lahjakortti on henkilökohtainen, eikä sitä voi siirtää toiselle henkilölle. Mikäli valitun Havaijin-matkan arvo ylittää lahjakortin arvon, voittaja on velvollinen maksamaan erotuksen. Mikäli matkan arvo on lahjakortin arvoa pienempi, voittajalla ei ole oikeutta saada erotusta rahana. Voittaja vastaa itse tarvittavien matkustusasiakirjojen, kuten passin sekä matkavakuutusten, hankkimisesta.</p>
+								<p>Arvonta suoritetaan 1.10.2013. Voittajalle ilmoitetaan voitosta hänen osallistumisen yhteydessä ilmoittamaansa sähköpostiosoitteeseen. Voittajalla on velvollisuus ilmoittaa häneltä voittoilmoituksessa pyydetyt tiedot yhden (1) viikon kuluessa siitä, kun ilmoitus on lähetetty. Mikäli voittaja laiminlyö sanotun velvollisuutensa, voitto mitätöityy ja Danonella on oikeus arpoa uusi voittaja.</p>
+								<p>Danonella on oikeus muuttaa palkinnon sisältöä tarpeen vaatiessa, kuten yhteistyökumppaneista johtuvien syiden vuoksi. </p>
+							</li>
+							<li>
+								<h3>Danonen vastuu</h3>
+								<p>Danone ei ole vastuussa mistään mahdollisesta arvontaan osallistumiseen tai palkinnon vastaanottamiseen ja käyttämiseen liittyvistä kuluista tai välittömistä tai välillisistä vahingoista. Danone ei myöskään vastaa palkintojen sisällöstä, käytettävyydestä tai niiden soveltuvuudesta voittajalle. Mahdolliset reklamaatiot palkintojen käyttämiseen liittyen tulee osoittaa suoraan kyseisen palkinnon toteuttajalle.</p>
+							</li>
+							<li>
+								<h3>Henkilötiedot ja voittajan nimen julkaisu</h3>
+								<p>Arvontaan osallistuvien tietoja voidaan käyttää henkilötietolainsäädännön sallimalla tavalla mm. suoramarkkinointitarkoituksiin. Arvontaan osallistuvat myöntävät Danonelle rajoituksettoman oikeuden julkaista voittajan nimen ilman erillistä suostumusta, ilmoitusta tai korvausta, Danonen valitsemissa medioissa.</p>
+							</li>
+							<li>
+								<h3>Arpajaisvero</h3>
+								<p>Arvonnan järjestäjä maksaa palkinnosta lakisääteisen arpajaisveron.</p>
+							</li>
+							<li>
+								<h3>Muut ehdot</h3>
+								<p>Lähettämällä yhteystietonsa arvontaan osallistuja hyväksyy nämä arvonnan säännöt ja sitoutuu noudattamaan niitä. Danone pidättää itsellään oikeudet sääntömuutoksiin. </p>
+								<p>Arvontaan ja sen sääntöihin sovelletaan Suomen lainsäädäntöä, pois lukien lainvalintaa koskevat säännöt. Mahdolliset erimielisyydet ratkaistaan Helsingin käräjäoikeudessa. Suomessa asuvalla kuluttajalla on kuitenkin oikeus viedä erimielisyys myös kotipaikkansa yleisen alioikeuden tai kuluttajariitalautakunnan ratkaistavaksi.</p>
+								<p>Arvonta ei ole Facebookin sponsoroima, suosittelema, hallinnoima, eikä millään tavalla liity Facebookiin. Ymmärrät, että luovutat tietosi Danonelle arvonnan käyttöön, etkä Facebookille.</p>
+							</li>
+						</ol>
+						<a class="button" onClick="hulaCore.closeModal(this.parentNode.parentNode.parentNode); hulaCore.openModal('modal_end');">Takaisin</a>
+					</div>
+				</div>
+			</div>
+			<div id="modal_share" class="vertical-offset" style="display: none;">
+				<div class="modal">
+					<div class="content">
+						<h3>Kiitos osallistumisesta</h3>
+						<p>Hienosti hulattu – sait ajaksi <span id="timer"></span><br />
+						Jaa tulos kavereillesi ja kutsu heidätkin mukaan kisaan!</p>
+						<a class="button facebook" onClick="hulaCore.share();">Jaa tuloksesi</a>
+						<p>Voit jatkaa pelaamista ja osallistua arvontaan niin monta kertaa kuin vain haluat – hula hula!</p>
+						<a class="button" onClick="hulaCore.reset();">Pelaa uudelleen</a>
+						<a class="button close" onClick="hulaCore.reset();">Pelaa uudelleen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<script type="text/javascript">
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+			request = true;
+
+			b[c] = b[c].replace( rcs, ' ' );
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	</script>		
+        
+        <script src="assets/js/kolmedee.js"></script>
+        <script src="assets/js/hulaCore.js"></script>
+    </body>
 </html>
